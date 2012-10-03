@@ -15,8 +15,7 @@ var floormap = {
     var scrollLeft = Math.max(0, parseInt(destination.left, 10) - mapWrapper.width()/2);
     mapWrapper.scrollTo({top: scrollTop, left: scrollLeft}, {duration: 500});
     
-    var hash =  "#" + destination.id;
-    var mapURL = document.location.protocol + '//' + document.location.host + document.location.pathname + hash;
+    var mapURL = document.location.protocol + '//' + document.location.host + document.location.pathname + '#!/' + destination.id;;
     this.setHash(destination.id);
     $('#qrcode').empty().qrcode(mapURL);
     $('#map-url').text(mapURL);
