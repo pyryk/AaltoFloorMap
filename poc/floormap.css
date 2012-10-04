@@ -1,27 +1,27 @@
 @media only screen and (max-width : 1000px) {
-	#sidebar, #controls {
-		display: none !important;
-		position: static;
-	}
-	
-	#search {
-	  position: static;
-	}
-	
-	#map-wrapper {
-	  bottom: 0 !important;
-	  left: 0 !important;
-	  right: 0 !important;
-	}
+  #sidebar, #controls {
+    display: none !important;
+    position: static;
+  }
+  
+  #search {
+    position: static;
+  }
+  
+  #map-wrapper {
+    bottom: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+  }
 }
 html { height: 100% }
 body { 
-	height: 100%; 
-	margin: 0px; 
-	padding: 0px;
-	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-	font-size: 18px;
-	color: #444;
+  height: 100%; 
+  margin: 0px; 
+  padding: 0px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  color: #444;
 }
 #search {
   position: fixed;
@@ -50,61 +50,61 @@ body {
   right: 410px;
 }
 #map-canvas { 
-	position: relative;
-	padding-bottom: 50px;
-	width: 1030px;
-	z-index: 1;
+  position: relative;
+  padding-bottom: 50px;
+  width: 1030px;
+  z-index: 1;
 }
 #youarehere { 
-	width: 16px;
-	height: 16px;
-	background: url('booris.png');
-	position: absolute;
-	top: 450px;
-	left: 750px;
-	z-index: 2;
+  width: 16px;
+  height: 16px;
+  background: url('booris.png');
+  position: absolute;
+  top: 450px;
+  left: 750px;
+  z-index: 2;
 }
 #destination {
-	display: none;
-	position: absolute;
-	z-index: 2;
+  display: none;
+  position: absolute;
+  z-index: 2;
 }
 .destination, #destination {
-	color: red;
-	font-weight: black;
-	font-size: 32px;
+  color: red;
+  font-weight: black;
+  font-size: 32px;
 }
 #sidebar {
-	position: fixed;
-	top: 30px;
-	right: 0;
-	width: 350px;
-	margin: 50px 50px 0 10px;
-	z-index: 3;
-	background-color: white;
-	text-align: center;
+  position: fixed;
+  top: 30px;
+  right: 0;
+  width: 350px;
+  margin: 50px 50px 0 10px;
+  z-index: 3;
+  background-color: white;
+  text-align: center;
 }
 #sidebar #map-url {
   margin-top: 10px;
   font-size: 14px;
 }
 #qrcode {
-	width: 256px;
-	height: 256px;
-	margin: 0 auto 20px;
-	background: #ccc;
+  width: 256px;
+  height: 256px;
+  margin: 0 auto 20px;
+  background: #ccc;
 }
 #legend {
-	margin-top: 50px;
-	text-align: left;
-	background-image: -moz-linear-gradient(top, #3366cc, #1188dd);
+  margin-top: 50px;
+  text-align: left;
+  background-image: -moz-linear-gradient(top, #3366cc, #1188dd);
   background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #f5f5f5),color-stop(1, #ededed));
   padding: 20px 15px;
   border: 1px solid #bbb;
   border-radius: 5px;
 }
 #legend p {
-	margin: 0;
+  margin: 0;
 }
 #controls { 
 z-index: 4;
