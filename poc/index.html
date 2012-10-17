@@ -12,17 +12,58 @@
 <script type="text/javascript" src="jquery.qrcode.min.js"></script> 
 <script type="text/javascript" src="jquery.scrollTo.min.js"></script> 
 <script type="text/javascript" src="magic.js"></script>
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+<script type="text/javascript">
+	var ge;
+    google.load("earth", "1");
+
+    function init() {
+      google.earth.createInstance('map3d', initCB, failureCB);
+    }
+
+    function initCB(instance) {
+      ge = instance;
+      ge.getWindow().setVisibility(true);
+	  // add a navigation control
+	  ge.getNavigationControl().setVisibility(ge.VISIBILITY_AUTO);
+
+	  // add some layers
+	  ge.getLayerRoot().enableLayerById(ge.LAYER_BORDERS, true);
+	  ge.getLayerRoot().enableLayerById(ge.LAYER_ROADS, true);
+
+	  ge.getOptions().setStatusBarVisibility(true);
+	  var la = ge.getView().copyAsLookAt(ge.ALTITUDE_RELATIVE_TO_GROUND);
+	  la.setLatitude(60.1835);
+	  la.setLongitude(24.8291);
+      la.setRange(1760);
+      ge.getView().setAbstractView(la);
+ 
+	  //<!--var lookAt = ge.createLookAt('');
+//	  lookAt.setLatitude(60.18);
+//	  lookAt.setLongitude(24.82);
+//	  lookAt.setRange(900000.0);
+//	  ge.getView().setAbstractView(lookAt);
+//	  -->
+	  
+	  }
+
+    function failureCB(errorCode) {
+    }
+
+    google.setOnLoadCallback(init);
+  </script>
+
 </head>
 <body>
 	<div id="sidebar">
 		<div id="qrcode">(qr code will be here)</div>
 		Scan this with your mobile device to load map, or use this url:
 		<div id="map-url">url will be here</div>
-		<div id="legend">
-			<p><img src="booris.png"> You are here</p>
-			<p><span class="destination">x</span> Your destination</p>
+			<div id="legend">
+				<p><img src="booris.png"> You are here</p>
+				<p><span class="destination">x</span> Your destination</p>
+			</div>
 		</div>
-	</div>
 	<div id="search">
 		Search: 
 		<button id="auditorium">Auditorium</button>
@@ -30,11 +71,9 @@
 		<span class="hint">(these to be replaced with an autocomplete search box)</span>
 	</div>
 	<div id="map-wrapper">
-	  <div id="map-canvas">
-			<img src="pocmap.png">
-			<div id="youarehere"></div>
-			<div id="destination">x</div>
-		</div>
+    	<div id="map-canvas">
+        	<div id="map3d" style="height: 400px; width:600px;"></div>
+</div>
 	</div>
   <div id="controls">
 		<p>PoC. Don't expect this to work correctly (or at all). Or to be in any way elegant, for that matter.</p>
