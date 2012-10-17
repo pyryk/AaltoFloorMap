@@ -1,0 +1,29 @@
+#floormap-wrapper {
+  overflow: auto;
+  position: absolute;
+  top: 50px;
+  bottom: 50px;
+  right: 410px;
+}
+
+#map-wrapper {
+  position: absolute;
+  width: 100%; 
+  top: 50px; 
+  bottom: 0;
+}
+
+#youarehere { 
+  width: 16px;
+  height: 16px;
+  background: url('../images/location-dot.png');
+  position: absolute;
+  top: 450px;
+  left: 750px;
+  z-index: 2;
+}
+#destination {
+  display: none;
+  position: absolute;
+  z-index: 2;
+}

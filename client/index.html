@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Floor map</title>
+  <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta charset="UTF-8" />
+
+  <script type="text/javascript" src="js/lib/jquery-1.8.2.min.js"></script> 
+  <script type="text/javascript" src="js/lib/jquery.qrcode.min.js"></script> 
+  <script type="text/javascript" src="js/lib/jquery.scrollTo.min.js"></script>
+  <script type="text/javascript" src="js/lib/spine/spine.js"></script>
+  <script type="text/javascript" src="js/lib/spine/route.js"></script>
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
+  <link href="/stylesheets/print.css" media="print" rel="stylesheet" type="text/css" />
+  <!--[if lt IE 8]>
+      <link href="/stylesheets/ie.css" media="screen, projection" rel="stylesheet" type="text/css" />
+  <![endif]-->
+  
+  <link href="/stylesheets/app.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+  <div id="search">
+    Search: 
+    <button id="auditorium">Auditorium</button>
+    <button id="rafla">Rafla</button>
+    <span class="hint">(these to be replaced with an autocomplete search box)</span>
+  </div>
+  <div id="map-wrapper">
+    <div id="map-canvas" style="width: 100%; height: 100%"></div>
+  </div>
+  
+  <div id="floormap-wrapper">
+  </div>
+  <script id="floormap-template" type="text/x-handlebars-template">
+    <div id="map-canvas">
+      <img src="{{building.mapURL}}">
+      <div id="youarehere" class="{{device.location}}"></div>
+      <div id="destination">x</div>
+    </div>
+  </script>
+  
+  <script id="sidebar-template" type="text/x-handlebars-template">
+    <div id="sidebar">
+      <div id="qrcode">(qr code will be here)</div>
+      Scan this with your mobile device to load map, or use this url:
+      <div id="map-url">url will be here</div>
+      <div id="legend">
+        <p><img src="images/location-dot.png"> You are here</p>
+        <p><span class="destination">x</span> Your destination</p>
+      </div>
+    </div>
+  </script>
+  
+  <script type="text/javascript" src="js/map.js"></script>
+  <script type="text/javascript" src="js/app.js"></script>
+</body>
+</html>
