@@ -1,5 +1,19 @@
-window.app = {
+var App = Spine.Controller.sub({
   init: function() {
+    Spine.Route.setup();
+    
+    this.routes({
+      "/:building/:room/": function(params) {
+        console.log(params);
+      },
+      "/": function() {
+        console.log("root");
+      }
+    });
+    
+    this.initGMaps();
+  },
+  initGMaps: function() {
     var apikey = "AIzaSyBWZX8GGfX_4eL1f_EMjP4cr_t-1tj1uRo";
 
     $(function() {
@@ -13,6 +27,10 @@ window.app = {
   initializeMap: function() {
     this.map = new MapController();
   }
-};
+});
 
-$(window.app.init());
+$(function() {
+  window.app = new App();
+});
+
+//$(window.app.init());
