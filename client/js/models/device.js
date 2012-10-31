@@ -1,8 +1,8 @@
 var Device = Spine.Model.sub();
-Device.configure('Device', 'type', 'position');
+Device.configure('Device', 'type', 'location');
 
 Device.include({
-  getPosition: function() {
-    return this.position; // TODO use geolocation api if necessary
+  getLocation: function() {
+    return this.location; // TODO use geolocation api if necessary
   }
 });
