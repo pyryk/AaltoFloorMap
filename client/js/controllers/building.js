@@ -24,5 +24,6 @@ var BuildingController = Spine.Controller.sub({
   },
   clicked: function() {
     console.log(this.item.name + ' clicked!');
+    app.navigateTo(this.item);
   }
 });

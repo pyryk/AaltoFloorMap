@@ -1,4 +1,5 @@
 var MapController = Spine.Controller.sub({
+  el: $('#map-wrapper'),
   init: function() {
     var defaultCampus = Campus.getDefault();
     var map = Map.create({location: defaultCampus.location, zoomlevel: defaultCampus.zoomlevel});
@@ -19,5 +20,8 @@ var MapController = Spine.Controller.sub({
   },
   addAllMarkers: function() {
     Building.each(this.proxy(this.addMarker));
+  },
+  show: function() {
+    this.el.show();
   }
 });
