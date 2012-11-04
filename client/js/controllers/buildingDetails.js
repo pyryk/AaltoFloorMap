@@ -9,11 +9,15 @@ var BuildingDetailsController = Spine.Controller.sub({
     this.template = Handlebars.compile(this.rawTemplate.html());
   },
   events: {
-    'click h3': 'switchFloor'
+    'click h3': 'switchFloor',
+    'click #back-button': 'goBack'
   },
   switchFloor: function(e) {
     console.log('switching floor', e);
     app.navigateTo(this.item, {floor: $(e.target).attr('data-floor-no')});
+  },
+  goBack: function(e) {
+    app.navigateTo({type: 'map'});
   },
   getData: function(floor) {
     var building = this.item.toJSON();

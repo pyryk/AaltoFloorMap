@@ -34,32 +34,41 @@
 }
 
 /* line 32, ../scss/app.scss */
+#buildingDetails #back-button {
+  width: 50px;
+  padding: 5px;
+  margin: 5px;
+  border: 1px solid #ccc;
+  background: rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+/* line 41, ../scss/app.scss */
 #buildingDetails .floor {
   border: 2px solid #ccc;
   margin: 5px;
 }
-/* line 35, ../scss/app.scss */
+/* line 44, ../scss/app.scss */
 #buildingDetails .floor h3 {
   padding: 5px 20px;
   cursor: pointer;
 }
-/* line 40, ../scss/app.scss */
+/* line 49, ../scss/app.scss */
 #buildingDetails .floor.active {
   display: block;
 }
-/* line 42, ../scss/app.scss */
+/* line 51, ../scss/app.scss */
 #buildingDetails .floor.active h3 {
   background-color: #eee;
 }
-/* line 46, ../scss/app.scss */
+/* line 55, ../scss/app.scss */
 #buildingDetails .floor.inactive {
   display: block;
 }
-/* line 48, ../scss/app.scss */
+/* line 57, ../scss/app.scss */
 #buildingDetails .floor.inactive h3 {
   background-color: #ddd;
 }
-/* line 51, ../scss/app.scss */
+/* line 60, ../scss/app.scss */
 #buildingDetails .floor.inactive img {
   display: none;
 }

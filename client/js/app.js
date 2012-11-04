@@ -84,11 +84,12 @@ var App = Spine.Controller.sub({
       } else {
         this.navigate('/' + object.id + '/');
       }
-      
     } else if (object.type === 'room') {
       this.navigate('/' + object.building.id + '/' + object.floor + '/' + object.name);
     } else if (object.type === 'campus') {
       console.log('not supported yet');
+    } else if (object.type === 'map') {
+      this.navigate('/');
     } else {
       throw new Error('Cannot navigate to this object!');
     }

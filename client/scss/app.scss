@@ -29,6 +29,15 @@
 }
 
 #buildingDetails {
+  #back-button {
+    width: 50px;
+    padding: 5px;
+    margin: 5px;
+    border: 1px solid #ccc;
+    background: rgba(0,0,0,0.1);
+    cursor: pointer;
+  }
+  
   .floor {
     border: 2px solid #ccc;
     margin: 5px;
