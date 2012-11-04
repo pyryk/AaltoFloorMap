@@ -49,7 +49,8 @@ var App = Spine.Controller.sub({
     var showParam;
     if (params.building) {
       pageName = 'buildingDetails';
-      showParam = parseInt(params.floor);
+      if (params && params.floor)
+        showParam = parseInt(params.floor);
       if (!this.pages[pageName]) {
         this.pages[pageName] = new BuildingDetailsController({
           parent: $('#main'),
@@ -78,7 +79,7 @@ var App = Spine.Controller.sub({
   },
   navigateTo: function(object, params) {
     if (object.type === 'building') {
-      if (params.floor) {
+      if (params && params.floor) {
         this.navigate('/' + object.id + '/' + params.floor + '/');
       } else {
         this.navigate('/' + object.id + '/');
