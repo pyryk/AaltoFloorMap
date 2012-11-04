@@ -23,7 +23,7 @@ var MapController = Spine.Controller.sub({
     Building.each(this.proxy(this.addMarker));
   },
   show: function() {
-    $('#main > div').not(this.el).hide();
+    this.el.siblings().hide();
     this.el.show();
   }
 });

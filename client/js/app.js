@@ -1,12 +1,18 @@
 var App = Spine.Controller.sub({
   pages: [],
+  mapInitialized: false,
+  
   init: function() {
     this.routes({
       "/:building/": function(params) {
         console.log("Building", params);
         this.showView(params);
       },
-      "/:building/:room/": function(params) {
+      "/:building/:floor/": function(params) {
+        console.log("Floor", params);
+        this.showView(params);
+      },
+      "/:building/:floor/:room/": function(params) {
         console.log("Room", params);
         this.showView(params);
       },
@@ -38,11 +44,12 @@ var App = Spine.Controller.sub({
     console.log('map initialized');
     
   },
-  mapInitialized: false,
   showView: function(params) {
     var pageName;
+    var showParam;
     if (params.building) {
       pageName = 'buildingDetails';
+      showParam = parseInt(params.floor);
       if (!this.pages[pageName]) {
         this.pages[pageName] = new BuildingDetailsController({
           parent: $('#main'),
@@ -65,15 +72,20 @@ var App = Spine.Controller.sub({
       // hide all...
       $('#main > div').hide();
       // ...but this
-      this.pages[pageName].show();
+      this.pages[pageName].show(showParam);
     }
     
   },
-  navigateTo: function(object) {
+  navigateTo: function(object, params) {
     if (object.type === 'building') {
-      this.navigate('/' + object.id + '/');
+      if (params.floor) {
+        this.navigate('/' + object.id + '/' + params.floor + '/');
+      } else {
+        this.navigate('/' + object.id + '/');
+      }
+      
     } else if (object.type === 'room') {
-      this.navigate('/' + object.building.id + '/' + object.name);
+      this.navigate('/' + object.building.id + '/' + object.floor + '/' + object.name);
     } else if (object.type === 'campus') {
       console.log('not supported yet');
     } else {

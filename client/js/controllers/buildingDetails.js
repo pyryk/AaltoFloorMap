@@ -1,19 +1,33 @@
 var BuildingDetailsController = Spine.Controller.sub({
   rawTemplate: $('#building-template'),
+  el: $('#buildingDetails'),
   init: function() {
     if (!this.item) {
       throw new Error('Can\'t create a BuildingDetailsController without a building');
     }
     
-    this.el = $('<div id="buildingDetails"></div>');
-    this.parent.append(this.el);
     this.template = Handlebars.compile(this.rawTemplate.html());
   },
-  getData: function() {
-    return {device: null, building: this.item.toJSON()};
+  events: {
+    'click h3': 'switchFloor'
   },
-  show: function() {
-    var data = this.getData();
+  switchFloor: function(e) {
+    console.log('switching floor', e);
+    app.navigateTo(this.item, {floor: $(e.target).attr('data-floor-no')});
+  },
+  getData: function(floor) {
+    var building = this.item.toJSON();
+    for (var i in building.floors) {
+      if (building.floors[i].number === floor) {
+        building.floors[i].state = 'active';
+      } else {
+        building.floors[i].state = 'inactive';
+      }
+    }
+    return {device: null, building: building};
+  },
+  show: function(floor) {
+    var data = this.getData(floor);
     this.html(this.template(data));
     
     this.el.show();
