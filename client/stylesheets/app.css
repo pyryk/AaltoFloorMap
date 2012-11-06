@@ -53,22 +53,37 @@
   cursor: pointer;
 }
 /* line 49, ../scss/app.scss */
+#buildingDetails .floor .floorplan-wrapper {
+  position: relative;
+}
+/* line 52, ../scss/app.scss */
+#buildingDetails .floor .floorplan-wrapper .room-marker {
+  position: absolute;
+  color: red;
+  opacity: 0.5;
+  font-weight: bold;
+}
+/* line 60, ../scss/app.scss */
 #buildingDetails .floor.active {
   display: block;
 }
-/* line 51, ../scss/app.scss */
+/* line 62, ../scss/app.scss */
 #buildingDetails .floor.active h3 {
   background-color: #eee;
 }
-/* line 55, ../scss/app.scss */
+/* line 66, ../scss/app.scss */
 #buildingDetails .floor.inactive {
   display: block;
 }
-/* line 57, ../scss/app.scss */
+/* line 68, ../scss/app.scss */
 #buildingDetails .floor.inactive h3 {
   background-color: #ddd;
 }
-/* line 60, ../scss/app.scss */
+/* line 71, ../scss/app.scss */
 #buildingDetails .floor.inactive img {
+  display: none;
+}
+/* line 74, ../scss/app.scss */
+#buildingDetails .floor.inactive .room-marker {
   display: none;
 }

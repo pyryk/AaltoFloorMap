@@ -34,25 +34,26 @@
     <div id="buildingDetails">
     </div>
   </div>
-  <script id="floormap-template" type="text/x-handlebars-template">
-    <div id="floor-canvas">
-      <img src="{{building.map}}">
-      <div id="youarehere" class="{{device.location}}"></div>
-      <div id="destination">x</div>
-    </div>
-  </script>
   
   <script id="building-template" type="text/x-handlebars-template">
     <div id="back-button">&lt; Back</div>
     <h2>{{building.name}}</h2>
     <div id="floors">
       {{#each building.floors}}
-        <div class="floor {{state}}">
+        <div class="floor floor-{{number}} {{state}}">
           <h3 data-floor-no="{{number}}">Floor {{number}}</h3>
-          <img src="images/{{map}}">
+          <div class="floorplan-wrapper">
+            <img src="images/{{map}}">
+            <div class="rooms"></div>
+          </div>
+
         </div>
       {{/each}}
     </div>
+  </script>
+
+  <script id="room-template" type="text/x-handlebars-template">
+    <div class="room-marker" style="top: {{room.top}}px; left: {{room.left}}px;" title="{{room.name}}">x</div>
   </script>
   
   <script id="sidebar-template" type="text/x-handlebars-template">
@@ -78,6 +79,8 @@
   <script type="text/javascript" src="js/controllers/map.js"></script>
   <script type="text/javascript" src="js/controllers/building.js"></script>
   <script type="text/javascript" src="js/controllers/buildingDetails.js"></script>
+  <script type="text/javascript" src="js/controllers/floorRooms.js"></script>
+  <script type="text/javascript" src="js/controllers/room.js"></script>
   <!-- load the data into the app -->
   <script type="text/javascript" src="js/data/campuses.js"></script>
   <script type="text/javascript" src="js/data/buildings.js"></script>

@@ -4,7 +4,22 @@
       name: 'Paniikki',
       building: 't',
       floor: 1,
-      location: [500, 100] // pixels [x, y]
+      top: 200,
+      left: 800 // pixels
+    },
+    {
+      name: 'T1',
+      building: 't',
+      floor: 2,
+      top: 200,
+      left: 800 // pixels
+    },
+    {
+      name: 'OLOhuone',
+      building: 't',
+      floor: 1,
+      top: 400,
+      left: 500 // pixels
     }
   ];
   

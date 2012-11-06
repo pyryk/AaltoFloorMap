@@ -11,7 +11,6 @@ var BuildingController = Spine.Controller.sub({
       // do other stuff
     }
     
-    console.log('creating a marker');
     var map = Map.getMap();
     
     this.marker = new google.maps.Marker({

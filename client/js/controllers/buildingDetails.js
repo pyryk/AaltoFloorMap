@@ -13,7 +13,6 @@ var BuildingDetailsController = Spine.Controller.sub({
     'click #back-button': 'goBack'
   },
   switchFloor: function(e) {
-    console.log('switching floor', e);
     app.navigateTo(this.item, {floor: $(e.target).attr('data-floor-no')});
   },
   goBack: function(e) {
@@ -33,7 +32,15 @@ var BuildingDetailsController = Spine.Controller.sub({
   show: function(floor) {
     var data = this.getData(floor);
     this.html(this.template(data));
-    
+
+    for (var i in this.item.floors) {
+      new FloorRoomsController({
+        building: this.item,
+        floor: this.item.floors[i].number,
+        el: this.$('.floor-' + this.item.floors[i].number + ' .rooms')
+      });
+    }
+
     this.el.show();
   }
   
