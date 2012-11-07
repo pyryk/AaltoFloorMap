@@ -49,12 +49,19 @@ var App = Spine.Controller.sub({
     var showParam;
     if (params.building) {
       pageName = 'buildingDetails';
+      var building = Building.find(params.building);
       if (params && params.floor)
         showParam = parseInt(params.floor);
+
+      if (params && params.room) {
+        var room = Room.find(building,params.room);
+        room.toggleActive();
+      }
+
       if (!this.pages[pageName]) {
         this.pages[pageName] = new BuildingDetailsController({
           parent: $('#main'),
-          item: Building.find(params.building)
+          item: building
         }); 
       } else {
         this.pages[pageName].item = Building.find(params.building);
@@ -85,7 +92,7 @@ var App = Spine.Controller.sub({
         this.navigate('/' + object.id + '/');
       }
     } else if (object.type === 'room') {
-      this.navigate('/' + object.building.id + '/' + object.floor + '/' + object.name);
+      this.navigate('/' + object.building + '/' + object.floor + '/' + object.name);
     } else if (object.type === 'campus') {
       console.log('not supported yet');
     } else if (object.type === 'map') {

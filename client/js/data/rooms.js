@@ -5,21 +5,24 @@
       building: 't',
       floor: 1,
       top: 200,
-      left: 800 // pixels
+      left: 800, // pixels
+      roomType: 'computer-lab'
     },
     {
       name: 'T1',
       building: 't',
       floor: 2,
       top: 200,
-      left: 800 // pixels
+      left: 800, // pixels
+      roomType: 'lecture-hall'
     },
     {
       name: 'OLOhuone',
       building: 't',
       floor: 1,
-      top: 400,
-      left: 500 // pixels
+      top: 420,
+      left: 500, // pixels
+      roomType: 'student-room'
     }
   ];
   

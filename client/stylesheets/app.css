@@ -63,27 +63,37 @@
   opacity: 0.5;
   font-weight: bold;
 }
-/* line 60, ../scss/app.scss */
+/* line 58, ../scss/app.scss */
+#buildingDetails .floor .floorplan-wrapper .room-marker.active {
+  opacity: 1;
+  padding: 10px;
+  margin-left: -10px;
+  margin-top: -10px;
+  border-radius: 50px;
+  border: 1px solid #ccc;
+  background: rgba(255, 255, 255, 0.7);
+}
+/* line 70, ../scss/app.scss */
 #buildingDetails .floor.active {
   display: block;
 }
-/* line 62, ../scss/app.scss */
+/* line 72, ../scss/app.scss */
 #buildingDetails .floor.active h3 {
   background-color: #eee;
 }
-/* line 66, ../scss/app.scss */
+/* line 76, ../scss/app.scss */
 #buildingDetails .floor.inactive {
   display: block;
 }
-/* line 68, ../scss/app.scss */
+/* line 78, ../scss/app.scss */
 #buildingDetails .floor.inactive h3 {
   background-color: #ddd;
 }
-/* line 71, ../scss/app.scss */
+/* line 81, ../scss/app.scss */
 #buildingDetails .floor.inactive img {
   display: none;
 }
-/* line 74, ../scss/app.scss */
+/* line 84, ../scss/app.scss */
 #buildingDetails .floor.inactive .room-marker {
   display: none;
 }

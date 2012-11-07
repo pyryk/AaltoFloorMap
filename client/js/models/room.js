@@ -1,8 +1,27 @@
 var Room = Spine.Model.sub();
-Room.configure('Room', 'name', 'building', 'floor', 'top', 'left');
+Room.configure('Room', 'name', 'building', 'floor', 'top', 'left', 'roomType', 'active');
+
+// possible room types here:
+// * lecture-hall
+// * computer-lab
+// * student-room
+// * cafeteria
+// * toilet
+// * room (default)
 
 Room.include({
-  type: 'room'
+  type: 'room',
+  active: false,
+  toggleActive: function() {
+  	Room.each(this.proxy(function(room) {
+  		if (room.id !== this.id) {
+  			room.active = false;
+  			room.save();
+  		}
+  	}));
+  	this.active = !this.active;
+  	this.save();
+  }
 });
 
 Room.extend({
@@ -21,5 +40,20 @@ Room.extend({
 			}
 		}
 		return roomsOnFloor;
+	},
+	find: function(building, name) {
+		if (!name) { // compatibility to normal find()
+			return Spine.Model.prototype.find.call(this, building);
+		}
+
+		var rooms = Room.findByBuilding(building);
+
+		for (var i in rooms) {
+			if (rooms[i].name.toLowerCase() === name.toLowerCase()) {
+				return rooms[i];
+			}
+		}
+
+		return null;
 	}
 });
