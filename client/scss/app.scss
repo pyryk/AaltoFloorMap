@@ -4,7 +4,7 @@ body {
 }
 
 $searchHeight: 50px;
-$smallSearchHeight: 26px;
+$smallSearchHeight: 50px;
 #search {
 
   @media only screen and (max-width: 1000px) {
@@ -26,6 +26,20 @@ $smallSearchHeight: 26px;
     @media only screen and (max-width: 1000px) {
       margin: 0;
       width: 100% !important;
+      height: 50px;
+
+      a {
+        height: 50px;
+
+        span {
+          font-size: 16px;
+          padding: 12px 0;
+        }
+
+        div {
+          padding: 13px 0;
+        }
+      }
     }
   }
   .chzn-default {
@@ -143,6 +157,9 @@ $smallSearchHeight: 26px;
         color: red;
         opacity: 0.5;
         font-weight: bold;
+        padding: 5px 10px;
+        margin-left: -10px;
+        margin-top: -5px;
 
         .room-name {
           display: none;
@@ -154,14 +171,12 @@ $smallSearchHeight: 26px;
         &.active {
           opacity: 1;
           padding: 5px 10px;
-          margin-left: -10px;
-          margin-top: -5px;
           border-radius: 50px;
           border: 1px solid #ccc;
           background: rgba(255,255,255,0.7);
 
           .room-name {
-            display: inline;
+            display: inline-block;
           }
         }
       }
