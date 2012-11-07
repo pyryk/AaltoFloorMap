@@ -38,7 +38,7 @@ $searchHeight: 50px;
 #sidebar {
   float: right;
   width: 300px;
-  padding: 30px 10px 0;
+  padding: 0 10px;
 
   .qrcode {
     width: 256px;
@@ -89,6 +89,13 @@ $searchHeight: 50px;
         opacity: 0.5;
         font-weight: bold;
 
+        .room-name {
+          display: none;
+
+          font-size: 12px;
+          color: rgba(255,0,0,0.7);
+        }
+
         &.active {
           opacity: 1;
           padding: 5px 10px;
@@ -97,6 +104,10 @@ $searchHeight: 50px;
           border-radius: 50px;
           border: 1px solid #ccc;
           background: rgba(255,255,255,0.7);
+
+          .room-name {
+            display: inline;
+          }
         }
       }
     }

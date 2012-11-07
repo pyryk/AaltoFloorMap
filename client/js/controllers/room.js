@@ -7,7 +7,6 @@ var RoomController = Spine.Controller.sub({
   this.template = Handlebars.compile($('#room-template').html());
 	},
 	clicked: function(e) {
-		console.log('clicked ' + this.item.name);
 		if (this.item.active) { // deselect the room
 			window.app.navigateTo(Building.find(this.item.building), {floor: this.item.floor});
 		} else {

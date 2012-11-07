@@ -5,19 +5,15 @@ var App = Spine.Controller.sub({
   init: function() {
     this.routes({
       "/:building": function(params) {
-        console.log("Building", params);
         this.showView(params);
       },
       "/:building/:floor": function(params) {
-        console.log("Floor", params);
         this.showView(params);
       },
       "/:building/:floor/:room": function(params) {
-        console.log("Room", params);
         this.showView(params);
       },
       "/": function() {
-        console.log("root");
         this.showView({});
       },
       "*anything": function() {
