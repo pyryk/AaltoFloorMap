@@ -4,20 +4,20 @@ var App = Spine.Controller.sub({
   
   init: function() {
     this.routes({
-      "/:building": function(params) {
+      "!/:building": function(params) {
         this.showView(params);
       },
-      "/:building/:floor": function(params) {
+      "!/:building/:floor": function(params) {
         this.showView(params);
       },
-      "/:building/:floor/:room": function(params) {
+      "!/:building/:floor/:room": function(params) {
         this.showView(params);
       },
-      "/": function() {
+      "!/": function() {
         this.showView({});
       },
       "*anything": function() {
-        console.log("catchall");
+        this.navigateTo({type: 'map'});
       }
     });
 
@@ -100,16 +100,16 @@ var App = Spine.Controller.sub({
   navigateTo: function(object, params) {
     if (object.type === 'building') {
       if (params && params.floor) {
-        this.navigate('/' + object.id + '/' + params.floor + '/');
+        this.navigate('!/' + object.id + '/' + params.floor + '/');
       } else {
-        this.navigate('/' + object.id + '/');
+        this.navigate('!/' + object.id + '/');
       }
     } else if (object.type === 'room') {
-      this.navigate('/' + object.building + '/' + object.floor + '/' + object.name);
+      this.navigate('!/' + object.building + '/' + object.floor + '/' + object.name);
     } else if (object.type === 'campus') {
       console.log('not supported yet');
     } else if (object.type === 'map') {
-      this.navigate('/');
+      this.navigate('!/');
     } else {
       throw new Error('Cannot navigate to this object!');
     }
