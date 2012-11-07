@@ -1,3 +1,8 @@
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans;
+  color: #444;
+}
+
 $searchHeight: 50px;
 #search {
   height: $searchHeight;
@@ -29,16 +34,21 @@ $searchHeight: 50px;
   bottom: 0;
 }
 
-#destination {
-  display: none;
-  position: absolute;
-  z-index: 2;
-}
-
 #sidebar {
-  float: right;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+
   width: 300px;
-  padding: 0 10px;
+  padding: 20px 10px 0;
+  font-size: 16px;
+  text-align: center;
+
+  .map-url {
+    margin-top: 8px;
+    font-size: 13px;
+  }
 
   .qrcode {
     width: 256px;
@@ -47,10 +57,27 @@ $searchHeight: 50px;
   }
 
   .legend {
-    margin-top: 20px;
+    text-align: left;
+    margin: 20px 0 20px 20px;
     border: 1px solid #ccc;
     padding: 5px 20px;
     width: 200px;
+
+    .legend-entry {
+
+      margin-bottom: 5px;
+
+      .destination {
+        color: red;
+        font-weight: bold;
+      }
+
+      .legend-symbol {
+        display: inline-block;
+        width: 30px;
+        text-align: center;
+      }
+    }
   }
 }
 
@@ -64,12 +91,16 @@ $searchHeight: 50px;
   overflow: auto;
 
   #back-button {
-    width: 50px;
+    float: left;
     padding: 5px;
     margin: 5px;
     border: 1px solid #ccc;
     background: rgba(0,0,0,0.1);
     cursor: pointer;
+  }
+
+  h2 {
+    clear: left;
   }
   
   .floor {

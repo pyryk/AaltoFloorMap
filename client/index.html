@@ -14,14 +14,14 @@
   <script type="text/javascript" src="js/lib/spine/route.js"></script>
   <script type="text/javascript" src="js/lib/handlebars-1.0.rc.1.js"></script>
   <script type="text/javascript" src="js/lib/chosen.jquery.min.js"></script>
-  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
-  <link href="/stylesheets/print.css" media="print" rel="stylesheet" type="text/css" />
+  <link href="stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
+  <link href="stylesheets/print.css" media="print" rel="stylesheet" type="text/css" />
   <!--[if lt IE 8]>
-      <link href="/stylesheets/ie.css" media="screen, projection" rel="stylesheet" type="text/css" />
+      <link href="stylesheets/ie.css" media="screen, projection" rel="stylesheet" type="text/css" />
   <![endif]-->
   
-  <link href="/stylesheets/chosen.css" rel="stylesheet" type="text/css" />
-  <link href="/stylesheets/app.css" rel="stylesheet" type="text/css" />
+  <link href="stylesheets/chosen.css" rel="stylesheet" type="text/css" />
+  <link href="stylesheets/app.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
   <div id="search"></div>
@@ -61,8 +61,8 @@
     Scan this with your mobile device to load map, or use this url:
     <div class="map-url">{{data.url}}</div>
     <div class="legend">
-      <p><img src="images/location-dot.png"> You are here</p>
-      <p><span class="destination">x</span> Your destination</p>
+      <p class="legend-entry"><span class="legend-symbol"><img src="images/location-dot.png"></span> You are here</p>
+      <p class="legend-entry"><span class="destination legend-symbol">x</span> Your destination</p>
     </div>
   </script>
 
