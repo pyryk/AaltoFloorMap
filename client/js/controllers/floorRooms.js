@@ -10,13 +10,10 @@ var FloorRoomsController = Spine.Controller.sub({
     if (item.building === this.building.id && item.floor === this.floor) {
       var room = new RoomController({item: item});
       this.append(room.render());
-    } else {
-      console.log('not in this building');
     }
   },
 
   addAll: function(){
     Room.each(this.proxy(this.addOne));
-    console.log('added rooms to ', this.el);
   }
 }); 

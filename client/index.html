@@ -13,19 +13,19 @@
   <script type="text/javascript" src="js/lib/spine/spine.js"></script>
   <script type="text/javascript" src="js/lib/spine/route.js"></script>
   <script type="text/javascript" src="js/lib/handlebars-1.0.rc.1.js"></script>
+  <script type="text/javascript" src="js/lib/chosen.jquery.min.js"></script>
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
   <link href="/stylesheets/print.css" media="print" rel="stylesheet" type="text/css" />
   <!--[if lt IE 8]>
       <link href="/stylesheets/ie.css" media="screen, projection" rel="stylesheet" type="text/css" />
   <![endif]-->
   
+  <link href="/stylesheets/chosen.css" rel="stylesheet" type="text/css" />
   <link href="/stylesheets/app.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
-  <div id="search">
-    Search: 
-    <input type="text" placeholder="Search buildings, rooms or facilities">
-  </div>
+  <div id="search"></div>
+  <div id="sidebar"></div>
   <div id="main">
     <div id="map-wrapper">
       <div id="map-canvas" style="width: 100%; height: 100%"></div>
@@ -57,15 +57,25 @@
   </script>
   
   <script id="sidebar-template" type="text/x-handlebars-template">
-    <div id="sidebar">
-      <div id="qrcode">(qr code will be here)</div>
-      Scan this with your mobile device to load map, or use this url:
-      <div id="map-url">url will be here</div>
-      <div id="legend">
-        <p><img src="images/location-dot.png"> You are here</p>
-        <p><span class="destination">x</span> Your destination</p>
-      </div>
+    <div class="qrcode">(qr code will be here)</div>
+    Scan this with your mobile device to load map, or use this url:
+    <div class="map-url">{{data.url}}</div>
+    <div class="legend">
+      <p><img src="images/location-dot.png"> You are here</p>
+      <p><span class="destination">x</span> Your destination</p>
     </div>
+  </script>
+
+  <script id="searchbar-template" type="text/x-handlebars-template">
+    <select class="searchfield" data-placeholder="Search rooms or buildings...">
+      <option></option>
+      {{#each buildings}}
+        <option value="building-{{id}}">{{name}}</option>
+      {{/each}}
+      {{#each rooms}}
+        <option value="room-{{id}}">{{name}} ({{building.name}})</option>
+      {{/each}}
+    </select>
   </script>
   
   <script type="text/javascript" src="js/app.js"></script>
@@ -75,12 +85,16 @@
   <script type="text/javascript" src="js/models/device.js"></script>
   <script type="text/javascript" src="js/models/map.js"></script>
   <script type="text/javascript" src="js/models/room.js"></script>
+  <script type="text/javascript" src="js/models/sidebar.js"></script>
   
   <script type="text/javascript" src="js/controllers/map.js"></script>
   <script type="text/javascript" src="js/controllers/building.js"></script>
   <script type="text/javascript" src="js/controllers/buildingDetails.js"></script>
   <script type="text/javascript" src="js/controllers/floorRooms.js"></script>
   <script type="text/javascript" src="js/controllers/room.js"></script>
+  <script type="text/javascript" src="js/controllers/sidebar.js"></script>
+  <script type="text/javascript" src="js/controllers/searchbar.js"></script>
+
   <!-- load the data into the app -->
   <script type="text/javascript" src="js/data/campuses.js"></script>
   <script type="text/javascript" src="js/data/buildings.js"></script>

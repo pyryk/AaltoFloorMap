@@ -8,7 +8,11 @@ var RoomController = Spine.Controller.sub({
 	},
 	clicked: function(e) {
 		console.log('clicked ' + this.item.name);
-		window.app.navigateTo(this.item);
+		if (this.item.active) { // deselect the room
+			window.app.navigateTo(Building.find(this.item.building), {floor: this.item.floor});
+		} else {
+			window.app.navigateTo(this.item);
+		}
 	},
 	getData: function() {
 		return {className: this.active, room: this.item};

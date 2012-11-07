@@ -1,34 +1,68 @@
-#floormap-wrapper {
-  overflow: auto;
-  position: absolute;
-  top: 50px;
-  bottom: 50px;
-  right: 410px;
+$searchHeight: 50px;
+#search {
+  height: $searchHeight;
+
+  .searchfield {
+    margin: 5px 20px;
+    padding: 5px;
+    width: 300px;
+    height: 25px;
+    font-size: 14px;
+  }
+
+  .chzn-container {
+    margin: 5px 20px;
+  }
+  .chzn-default {
+    color: #666;
+  }
+  .chzn-single {
+    border-radius: 0;
+  }
 }
 
 #map-wrapper {
   position: absolute;
-  width: 100%; 
-  top: 50px; 
+  top: $searchHeight;
+  left: 0;
+  right: 320px;
   bottom: 0;
 }
 
-#youarehere { 
-  width: 16px;
-  height: 16px;
-  background: url('../images/location-dot.png');
-  position: absolute;
-  top: 450px;
-  left: 750px;
-  z-index: 2;
-}
 #destination {
   display: none;
   position: absolute;
   z-index: 2;
 }
 
+#sidebar {
+  float: right;
+  width: 300px;
+  padding: 30px 10px 0;
+
+  .qrcode {
+    width: 256px;
+    background: white;
+    margin: 0 auto;
+  }
+
+  .legend {
+    margin-top: 20px;
+    border: 1px solid #ccc;
+    padding: 5px 20px;
+    width: 200px;
+  }
+}
+
 #buildingDetails {
+
+  position: absolute;
+  top: $searchHeight;
+  left: 0;
+  right: 320px;
+  bottom: 0;
+  overflow: auto;
+
   #back-button {
     width: 50px;
     padding: 5px;
@@ -57,9 +91,9 @@
 
         &.active {
           opacity: 1;
-          padding: 10px;
+          padding: 5px 10px;
           margin-left: -10px;
-          margin-top: -10px;
+          margin-top: -5px;
           border-radius: 50px;
           border: 1px solid #ccc;
           background: rgba(255,255,255,0.7);

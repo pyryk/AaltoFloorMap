@@ -14,7 +14,7 @@ Room.include({
   active: false,
   toggleActive: function() {
   	Room.each(this.proxy(function(room) {
-  		if (room.id !== this.id) {
+  		if (room.id !== this.id && room.active) {
   			room.active = false;
   			room.save();
   		}
@@ -41,9 +41,16 @@ Room.extend({
 		}
 		return roomsOnFloor;
 	},
+	deactivateAll: function() {
+		var rooms = Room.findAllByAttribute('active', true);
+		for (var i in rooms) {
+			rooms[i].active = false;
+			rooms[i].save();
+		}
+	},
 	find: function(building, name) {
 		if (!name) { // compatibility to normal find()
-			return Spine.Model.prototype.find.call(this, building);
+			return Spine.Model.find.call(this, building);
 		}
 
 		var rooms = Room.findByBuilding(building);

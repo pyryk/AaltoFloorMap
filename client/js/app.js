@@ -24,8 +24,23 @@ var App = Spine.Controller.sub({
         console.log("catchall");
       }
     });
+
+    // bind hashchange events to spine events for sidebar
+    $(window).bind('hashchange', function() {
+      Spine.trigger('hashchange', window.location.hash, document.URL);
+    });
     
     Spine.Route.setup();
+
+    // init sidebar & searchbar
+    new SidebarController({
+      el: $('#sidebar'),
+      item: Sidebar.create()
+    }).render();
+
+    new SearchbarController({
+      el: $('#search')
+    }).render();
   },
   initGMaps: function() {
     var apikey = "AIzaSyBWZX8GGfX_4eL1f_EMjP4cr_t-1tj1uRo";
@@ -56,6 +71,8 @@ var App = Spine.Controller.sub({
       if (params && params.room) {
         var room = Room.find(building,params.room);
         room.toggleActive();
+      } else {
+        Room.deactivateAll();
       }
 
       if (!this.pages[pageName]) {
