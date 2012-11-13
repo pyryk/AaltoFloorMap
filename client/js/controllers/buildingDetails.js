@@ -33,6 +33,8 @@ var BuildingDetailsController = Spine.Controller.sub({
     var data = this.getData(floor);
     this.html(this.template(data));
 
+    this.floorsEl = this.$('#floors');
+
     for (var i in this.item.floors) {
       new FloorRoomsController({
         building: this.item,
@@ -48,6 +50,35 @@ var BuildingDetailsController = Spine.Controller.sub({
         item: device
       }).render();
     }
+
+    var startpos = {};
+    var startzoom = 1;
+    var hammer = new Hammer(document.getElementById("floors"), {prevent_default:true, drag_min_distance: 20});
+    hammer.ontransformstart = this.proxy(function(ev) { 
+      startZoom = parseFloat(this.floorsEl.css('zoom'));
+      hammer.ondragstart(ev);
+    });
+    hammer.ontransform = this.proxy(function(ev) { 
+      this.floorsEl.css('zoom', startZoom * ev.scale);
+      hammer.ondrag(ev);
+    });
+    hammer.ondragstart = this.proxy(function(ev) {
+      startpos = {x: this.el.scrollLeft(), y: this.el.scrollTop()};
+    });
+    hammer.ondrag = this.proxy(function(ev) { 
+      var top = -ev.distanceY + startpos.y;
+      var left = -ev.distanceX + startpos.x;
+      this.el.scrollTo({top: top, left: left})
+      return false;
+    });
+
+    // workaround for untriggered click events with hammer+prevent_default
+    // + workaround for the 200ms click delay
+    hammer.ontap = this.proxy(function(ev) { 
+      if (!ev.originalEvent.type !== "mousedown") {
+        $(ev.originalEvent.target).click();
+      }
+    });
 
     this.el.show();
   }
