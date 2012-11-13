@@ -7,7 +7,8 @@ var MapController = Spine.Controller.sub({
     var mapOptions = {
       zoom: map.zoomlevel,
       center: new google.maps.LatLng(map.location[0], map.location[1]),
-      mapTypeId: google.maps.MapTypeId.HYBRID
+      mapTypeId: google.maps.MapTypeId.HYBRID,
+      zoomControlOptions: {style: google.maps.ZoomControlStyle.SMALL}
     }
     map.mapComponent = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
     map.save();

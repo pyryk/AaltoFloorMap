@@ -53,7 +53,6 @@ var App = Spine.Controller.sub({
   initializeMap: function() {
     this.map = new MapController();
     this.mapInitialized = true;
-    console.log('map initialized');
     
   },
   showView: function(params) {

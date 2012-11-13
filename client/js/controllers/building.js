@@ -22,7 +22,6 @@ var BuildingController = Spine.Controller.sub({
     google.maps.event.addListener(this.marker, 'click', this.proxy(this.clicked))
   },
   clicked: function() {
-    console.log(this.item.name + ' clicked!');
     app.navigateTo(this.item);
   }
 });
