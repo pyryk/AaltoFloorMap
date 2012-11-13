@@ -41,6 +41,14 @@ var BuildingDetailsController = Spine.Controller.sub({
       });
     }
 
+    var device = Device.getDevice();
+    if (device && device.building === this.item.id && device.floor === floor) {
+      new DeviceController({
+        el: this.$('.floor.active .device'),
+        item: device
+      }).render();
+    }
+
     this.el.show();
   }
   

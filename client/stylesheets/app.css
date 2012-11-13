@@ -1,20 +1,20 @@
-/* line 1, ../scss/app.scss */
+/* line 3, ../scss/app.scss */
 body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans;
   color: #444;
 }
 
-/* line 8, ../scss/app.scss */
+/* line 10, ../scss/app.scss */
 #search {
   height: 50px;
 }
 @media only screen and (max-width: 1000px) {
-  /* line 8, ../scss/app.scss */
+  /* line 10, ../scss/app.scss */
   #search {
     height: 50px;
   }
 }
-/* line 16, ../scss/app.scss */
+/* line 18, ../scss/app.scss */
 #search .searchfield {
   margin: 5px 20px;
   padding: 5px;
@@ -22,41 +22,41 @@ body {
   height: 25px;
   font-size: 14px;
 }
-/* line 24, ../scss/app.scss */
+/* line 26, ../scss/app.scss */
 #search .chzn-container {
   margin: 5px 20px;
 }
 @media only screen and (max-width: 1000px) {
-  /* line 24, ../scss/app.scss */
+  /* line 26, ../scss/app.scss */
   #search .chzn-container {
     margin: 0;
     width: 100% !important;
     height: 50px;
   }
-  /* line 31, ../scss/app.scss */
+  /* line 33, ../scss/app.scss */
   #search .chzn-container a {
     height: 50px;
   }
-  /* line 34, ../scss/app.scss */
+  /* line 36, ../scss/app.scss */
   #search .chzn-container a span {
     font-size: 16px;
     padding: 12px 0;
   }
-  /* line 39, ../scss/app.scss */
+  /* line 41, ../scss/app.scss */
   #search .chzn-container a div {
     padding: 13px 0;
   }
 }
-/* line 45, ../scss/app.scss */
+/* line 47, ../scss/app.scss */
 #search .chzn-default {
   color: #666;
 }
-/* line 48, ../scss/app.scss */
+/* line 50, ../scss/app.scss */
 #search .chzn-single {
   border-radius: 0;
 }
 
-/* line 53, ../scss/app.scss */
+/* line 55, ../scss/app.scss */
 #map-wrapper {
   position: absolute;
   top: 50px;
@@ -65,14 +65,14 @@ body {
   bottom: 0;
 }
 @media only screen and (max-width: 1000px) {
-  /* line 53, ../scss/app.scss */
+  /* line 55, ../scss/app.scss */
   #map-wrapper {
     right: 0;
     top: 50px;
   }
 }
 
-/* line 66, ../scss/app.scss */
+/* line 68, ../scss/app.scss */
 #sidebar {
   position: absolute;
   top: 0;
@@ -84,12 +84,12 @@ body {
   text-align: center;
 }
 @media only screen and (max-width: 1000px) {
-  /* line 66, ../scss/app.scss */
+  /* line 68, ../scss/app.scss */
   #sidebar {
     display: none;
   }
 }
-/* line 82, ../scss/app.scss */
+/* line 84, ../scss/app.scss */
 #sidebar .active-room h2 {
   margin: 10px 0;
   font-weight: bold;
@@ -97,24 +97,24 @@ body {
   overflow: hidden;
   text-overflow: ellipsis;
 }
-/* line 90, ../scss/app.scss */
+/* line 92, ../scss/app.scss */
 #sidebar .active-room .building-name {
   margin: 0 0 20px 0;
   overflow: hidden;
   text-overflow: ellipsis;
 }
-/* line 97, ../scss/app.scss */
+/* line 99, ../scss/app.scss */
 #sidebar .map-url {
   margin-top: 8px;
   font-size: 13px;
 }
-/* line 102, ../scss/app.scss */
+/* line 104, ../scss/app.scss */
 #sidebar .qrcode {
   width: 256px;
   background: white;
   margin: 0 auto;
 }
-/* line 108, ../scss/app.scss */
+/* line 110, ../scss/app.scss */
 #sidebar .legend {
   text-align: left;
   margin: 20px 0 20px 20px;
@@ -122,23 +122,31 @@ body {
   padding: 5px 20px;
   width: 200px;
 }
-/* line 115, ../scss/app.scss */
+/* line 117, ../scss/app.scss */
 #sidebar .legend .legend-entry {
   margin-bottom: 5px;
 }
-/* line 119, ../scss/app.scss */
+/* line 121, ../scss/app.scss */
 #sidebar .legend .legend-entry .destination {
   color: red;
   font-weight: bold;
+  padding: 5px 10px;
+  border-radius: 50px;
+  border: 1px solid #ccc;
+  background: rgba(255, 255, 255, 0.7);
 }
-/* line 124, ../scss/app.scss */
+/* line 130, ../scss/app.scss */
 #sidebar .legend .legend-entry .legend-symbol {
   display: inline-block;
   width: 30px;
   text-align: center;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
-/* line 133, ../scss/app.scss */
+/* line 140, ../scss/app.scss */
 #buildingDetails {
   position: absolute;
   top: 50px;
@@ -148,13 +156,13 @@ body {
   overflow: auto;
 }
 @media only screen and (max-width: 1000px) {
-  /* line 133, ../scss/app.scss */
+  /* line 140, ../scss/app.scss */
   #buildingDetails {
     right: 0;
     top: 50px;
   }
 }
-/* line 147, ../scss/app.scss */
+/* line 154, ../scss/app.scss */
 #buildingDetails #back-button {
   float: left;
   padding: 5px;
@@ -163,25 +171,25 @@ body {
   background: rgba(0, 0, 0, 0.1);
   cursor: pointer;
 }
-/* line 156, ../scss/app.scss */
+/* line 163, ../scss/app.scss */
 #buildingDetails h2 {
   clear: left;
 }
-/* line 160, ../scss/app.scss */
+/* line 167, ../scss/app.scss */
 #buildingDetails .floor {
   border: 2px solid #ccc;
   margin: 5px;
 }
-/* line 163, ../scss/app.scss */
+/* line 170, ../scss/app.scss */
 #buildingDetails .floor h3 {
   padding: 5px 20px;
   cursor: pointer;
 }
-/* line 168, ../scss/app.scss */
+/* line 175, ../scss/app.scss */
 #buildingDetails .floor .floorplan-wrapper {
   position: relative;
 }
-/* line 171, ../scss/app.scss */
+/* line 178, ../scss/app.scss */
 #buildingDetails .floor .floorplan-wrapper .room-marker {
   position: absolute;
   color: red;
@@ -191,13 +199,13 @@ body {
   margin-left: -10px;
   margin-top: -5px;
 }
-/* line 180, ../scss/app.scss */
+/* line 187, ../scss/app.scss */
 #buildingDetails .floor .floorplan-wrapper .room-marker .room-name {
   display: none;
   font-size: 12px;
   color: rgba(255, 0, 0, 0.7);
 }
-/* line 187, ../scss/app.scss */
+/* line 194, ../scss/app.scss */
 #buildingDetails .floor .floorplan-wrapper .room-marker.active {
   opacity: 1;
   padding: 5px 10px;
@@ -205,31 +213,38 @@ body {
   border: 1px solid #ccc;
   background: rgba(255, 255, 255, 0.7);
 }
-/* line 194, ../scss/app.scss */
+/* line 201, ../scss/app.scss */
 #buildingDetails .floor .floorplan-wrapper .room-marker.active .room-name {
   /*display: inline-block;*/
 }
-/* line 201, ../scss/app.scss */
+/* line 207, ../scss/app.scss */
+#buildingDetails .floor .floorplan-wrapper .device-symbol {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  background: url("../images/location-dot.png");
+}
+/* line 215, ../scss/app.scss */
 #buildingDetails .floor.active {
   display: block;
 }
-/* line 203, ../scss/app.scss */
+/* line 217, ../scss/app.scss */
 #buildingDetails .floor.active h3 {
   background-color: #eee;
 }
-/* line 207, ../scss/app.scss */
+/* line 221, ../scss/app.scss */
 #buildingDetails .floor.inactive {
   display: block;
 }
-/* line 209, ../scss/app.scss */
+/* line 223, ../scss/app.scss */
 #buildingDetails .floor.inactive h3 {
   background-color: #ddd;
 }
-/* line 212, ../scss/app.scss */
+/* line 226, ../scss/app.scss */
 #buildingDetails .floor.inactive img {
   display: none;
 }
-/* line 215, ../scss/app.scss */
+/* line 229, ../scss/app.scss */
 #buildingDetails .floor.inactive .room-marker {
   display: none;
 }

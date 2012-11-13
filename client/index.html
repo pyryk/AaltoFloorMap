@@ -45,6 +45,7 @@
           <div class="floorplan-wrapper">
             <img src="images/{{map}}">
             <div class="rooms"></div>
+            <div class="device"></div>
           </div>
 
         </div>
@@ -57,6 +58,10 @@
       <span class="marker-icon">x</span>
       <span class="room-name">{{room.name}}</span>
     </div>
+  </script>
+
+  <script id="device-template" type="text/x-handlebars-template">
+    <div class="device-symbol" style="top: {{device.top}}px; left: {{device.left}}px"></div>
   </script>
   
   <script id="sidebar-template" type="text/x-handlebars-template">
@@ -106,6 +111,7 @@
   <script type="text/javascript" src="js/controllers/room.js"></script>
   <script type="text/javascript" src="js/controllers/sidebar.js"></script>
   <script type="text/javascript" src="js/controllers/searchbar.js"></script>
+  <script type="text/javascript" src="js/controllers/device.js"></script>
 
   <!-- load the data into the app -->
   <script type="text/javascript" src="js/data/campuses.js"></script>
