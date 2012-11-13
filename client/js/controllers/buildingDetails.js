@@ -1,6 +1,7 @@
 var BuildingDetailsController = Spine.Controller.sub({
   rawTemplate: $('#building-template'),
   el: $('#buildingDetails'),
+  currentFloor: undefined,
   init: function() {
     if (!this.item) {
       throw new Error('Can\'t create a BuildingDetailsController without a building');
@@ -30,6 +31,12 @@ var BuildingDetailsController = Spine.Controller.sub({
     return {device: null, building: building};
   },
   show: function(floor) {
+    if (floor === this.currentFloor) {
+      this.el.show();
+      return; // no need to redraw, this saves us from missing the scroll positions etc.
+    }
+    this.currentFloor = floor;
+
     var data = this.getData(floor);
     this.html(this.template(data));
 

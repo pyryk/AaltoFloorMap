@@ -1,7 +1,8 @@
 var App = Spine.Controller.sub({
   pages: [],
   mapInitialized: false,
-  
+  currentPage: undefined,
+
   init: function() {
     this.routes({
       "!/:building": function(params) {
@@ -81,6 +82,8 @@ var App = Spine.Controller.sub({
       }
       
     } else {
+      // showing the campus map instead
+      this.currentPage = this.map;
       if (!this.mapInitialized) {
         this.initGMaps();
       } else {
@@ -90,9 +93,18 @@ var App = Spine.Controller.sub({
     }
     
     if (pageName) {
-      // hide all...
-      $('#main > div').hide();
-      // ...but this
+      console.log('showing view');
+
+      if (this.currentPage !== this.pages[pageName]) {
+        // change the view
+
+        // hide all...
+        $('#main > div').hide();
+        // ...but this
+        this.currentPage = this.pages[pageName];
+      }
+
+      // (re)draw the current view
       this.pages[pageName].show(showParam);
     }
     
