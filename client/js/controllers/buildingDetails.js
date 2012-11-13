@@ -13,6 +13,10 @@ var BuildingDetailsController = Spine.Controller.sub({
     'click h3': 'switchFloor',
     'click #back-button': 'goBack'
   },
+  setBuilding: function(building) {
+    this.item = building;
+    this.redrawNeeded = true;
+  },
   switchFloor: function(e) {
     app.navigateTo(this.item, {floor: $(e.target).attr('data-floor-no')});
   },
@@ -31,7 +35,7 @@ var BuildingDetailsController = Spine.Controller.sub({
     return {device: null, building: building};
   },
   show: function(floor) {
-    if (floor === this.currentFloor) {
+    if (!this.redrawNeeded && floor === this.currentFloor) {
       this.el.show();
       return; // no need to redraw, this saves us from missing the scroll positions etc.
     }

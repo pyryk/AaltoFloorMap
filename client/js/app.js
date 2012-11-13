@@ -78,7 +78,7 @@ var App = Spine.Controller.sub({
           item: building
         }); 
       } else {
-        this.pages[pageName].item = Building.find(params.building);
+        this.pages[pageName].setBuilding(Building.find(params.building));
       }
       
     } else {
@@ -93,7 +93,6 @@ var App = Spine.Controller.sub({
     }
     
     if (pageName) {
-      console.log('showing view');
 
       if (this.currentPage !== this.pages[pageName]) {
         // change the view
