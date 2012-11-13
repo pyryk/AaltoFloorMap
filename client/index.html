@@ -60,6 +60,15 @@
   </script>
   
   <script id="sidebar-template" type="text/x-handlebars-template">
+    <div class="active-room">
+    {{#if data.room}}
+      <h2>{{data.room.name}}</h2>
+      <p class="building-name">{{data.room.building.name}}</p>
+    {{else}}
+      <h2>&nbsp;</h2>
+      <p class="building-name">&nbsp;</p>
+    {{/if}}
+    </div>
     <div class="qrcode">(qr code will be here)</div>
     Scan this with your mobile device to load map, or use this url:
     <div class="map-url">{{data.url}}</div>

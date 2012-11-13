@@ -26,8 +26,6 @@ var App = Spine.Controller.sub({
       Spine.trigger('hashchange', window.location.hash, document.URL);
     });
     
-    Spine.Route.setup();
-
     // init sidebar & searchbar
     new SidebarController({
       el: $('#sidebar'),
@@ -37,6 +35,9 @@ var App = Spine.Controller.sub({
     new SearchbarController({
       el: $('#search')
     }).render();
+    
+    Spine.Route.setup();
+
   },
   initGMaps: function() {
     var apikey = "AIzaSyBWZX8GGfX_4eL1f_EMjP4cr_t-1tj1uRo";
@@ -99,11 +100,14 @@ var App = Spine.Controller.sub({
   },
   navigateTo: function(object, params) {
     if (object.type === 'building') {
-      if (params && params.floor) {
-        this.navigate('!/' + object.id + '/' + params.floor + '/');
-      } else {
-        this.navigate('!/' + object.id + '/');
+      if (!params) {
+        params = {};
       }
+      // default to the "first" floor
+      if (!params.floor && object.floors.length > 0) {
+        params.floor = object.floors[0].number;
+      }
+      this.navigate('!/' + object.id + '/' + params.floor + '/');
     } else if (object.type === 'room') {
       this.navigate('!/' + object.building + '/' + object.floor + '/' + object.name);
     } else if (object.type === 'campus') {

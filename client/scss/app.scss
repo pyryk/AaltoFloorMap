@@ -78,6 +78,22 @@ $smallSearchHeight: 50px;
     display: none;
   }
 
+  .active-room {
+    h2 {
+      margin: 10px 0;
+      font-weight: bold;
+      font-size: 20px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .building-name {
+      margin: 0 0 20px 0;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+
   .map-url {
     margin-top: 8px;
     font-size: 13px;
@@ -176,7 +192,7 @@ $smallSearchHeight: 50px;
           background: rgba(255,255,255,0.7);
 
           .room-name {
-            display: inline-block;
+            /*display: inline-block;*/
           }
         }
       }

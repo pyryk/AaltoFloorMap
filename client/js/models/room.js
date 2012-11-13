@@ -21,6 +21,8 @@ Room.include({
   	}));
   	this.active = !this.active;
   	this.save();
+
+  	Room.trigger('activechanged', this.active ? this : undefined);
   }
 });
 
@@ -47,6 +49,7 @@ Room.extend({
 			rooms[i].active = false;
 			rooms[i].save();
 		}
+		Room.trigger('activechanged', undefined);
 	},
 	find: function(building, name) {
 		if (!name) { // compatibility to normal find()

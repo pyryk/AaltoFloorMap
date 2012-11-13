@@ -4,7 +4,7 @@ var SidebarController = Spine.Controller.sub({
 		this.template = Handlebars.compile($('#sidebar-template').html());
 	},
 	getData: function() {
-		return {data: this.item}
+		return {data: this.item.toJSON()}
 	},
 	render: function() {
 		var data = this.getData();
