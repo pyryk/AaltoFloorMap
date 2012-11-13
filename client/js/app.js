@@ -75,7 +75,7 @@ var App = Spine.Controller.sub({
       if (!this.pages[pageName]) {
         this.pages[pageName] = new BuildingDetailsController({
           parent: $('#main'),
-          item: building
+          item: building,
         }); 
       } else {
         this.pages[pageName].setBuilding(Building.find(params.building));

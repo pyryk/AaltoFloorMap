@@ -27,6 +27,9 @@ Room.include({
 });
 
 Room.extend({
+	findActive: function() {
+		return Room.findByAttribute('active', true);
+	},
 	findByBuilding: function(building, floor) {
 		var rooms = Room.findAllByAttribute('building', building.id);
 

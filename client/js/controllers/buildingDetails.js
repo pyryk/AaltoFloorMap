@@ -2,6 +2,7 @@ var BuildingDetailsController = Spine.Controller.sub({
   rawTemplate: $('#building-template'),
   el: $('#buildingDetails'),
   currentFloor: undefined,
+  redrawNeeded: true,
   init: function() {
     if (!this.item) {
       throw new Error('Can\'t create a BuildingDetailsController without a building');
@@ -14,8 +15,10 @@ var BuildingDetailsController = Spine.Controller.sub({
     'click #back-button': 'goBack'
   },
   setBuilding: function(building) {
-    this.item = building;
-    this.redrawNeeded = true;
+    if (building.id !== this.item.id) {
+      this.item = building;
+      this.redrawNeeded = true;
+    }
   },
   switchFloor: function(e) {
     app.navigateTo(this.item, {floor: $(e.target).attr('data-floor-no')});
@@ -40,6 +43,7 @@ var BuildingDetailsController = Spine.Controller.sub({
       return; // no need to redraw, this saves us from missing the scroll positions etc.
     }
     this.currentFloor = floor;
+    this.redrawNeeded = false;
 
     var data = this.getData(floor);
     this.html(this.template(data));
@@ -92,6 +96,14 @@ var BuildingDetailsController = Spine.Controller.sub({
     });
 
     this.el.show();
+
+    // pan to the active room
+    var active = Room.findActive();
+    if (active) {
+      // TODO take map offset into account
+      //this.el.scrollTo(active.top, active.left);
+      this.el.scrollTo(active.top, active.left);
+    }
   }
   
 });

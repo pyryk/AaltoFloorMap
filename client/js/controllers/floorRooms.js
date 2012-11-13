@@ -15,5 +15,6 @@ var FloorRoomsController = Spine.Controller.sub({
 
   addAll: function(){
     Room.each(this.proxy(this.addOne));
-  }
+  },
+
 }); 
