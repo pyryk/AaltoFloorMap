@@ -36,6 +36,10 @@ var App = Spine.Controller.sub({
     new SearchbarController({
       el: $('#search')
     }).render();
+
+    new BackButtonController({
+      el: $('#back')
+    }).render();
     
     Spine.Route.setup();
 
@@ -90,6 +94,7 @@ var App = Spine.Controller.sub({
         $('#main > div').not('#map-wrapper').hide();
         this.map.show();
       }
+      Spine.trigger('page:changed', this.map, this, this.getPreviousPage());
     }
     
     if (pageName) {
@@ -101,12 +106,20 @@ var App = Spine.Controller.sub({
         $('#main > div').hide();
         // ...but this
         this.currentPage = this.pages[pageName];
+        Spine.trigger('page:changed', this.pages[pageName], this, this.getPreviousPage());
       }
 
       // (re)draw the current view
       this.pages[pageName].show(showParam);
     }
     
+  },
+  getPreviousPage: function() {
+    if (this.currentPage && this.currentPage === this.pages['buildingDetails']) {
+      return {type: 'map', name: 'Map'};
+    }
+
+    return undefined;
   },
   navigateTo: function(object, params) {
     if (object.type === 'building') {

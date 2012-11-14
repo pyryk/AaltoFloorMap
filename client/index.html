@@ -25,6 +25,7 @@
   <link href="stylesheets/app.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
+  <div id="back"></div>
   <div id="search"></div>
   <div id="sidebar"></div>
   <div id="main">
@@ -36,8 +37,13 @@
     </div>
   </div>
   
+  <script id="backbutton-template" type="text/x-handlebars-template">
+    {{#if previous}}
+    <div class="back-button">{{previous.name}}</div>
+    {{/if}}
+  </script>
+
   <script id="building-template" type="text/x-handlebars-template">
-    <div id="back-button">&lt; Back</div>
     <h2>{{building.name}}</h2>
     <div id="floors">
       {{#each building.floors}}
@@ -113,6 +119,7 @@
   <script type="text/javascript" src="js/controllers/sidebar.js"></script>
   <script type="text/javascript" src="js/controllers/searchbar.js"></script>
   <script type="text/javascript" src="js/controllers/device.js"></script>
+  <script type="text/javascript" src="js/controllers/backbutton.js"></script>
 
   <!-- load the data into the app -->
   <script type="text/javascript" src="js/data/campuses.js"></script>

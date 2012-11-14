@@ -23,6 +23,14 @@
       top: 420,
       left: 500, // pixels
       roomType: 'student-room'
+    },
+    {
+      name: 'TU2',
+      building: 'tuas',
+      floor: 1,
+      top: 420,
+      left: 500, // pixels
+      roomType: 'lecture-hall'
     }
   ];
   
