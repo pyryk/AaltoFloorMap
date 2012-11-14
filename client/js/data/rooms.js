@@ -21,15 +21,31 @@
       building: 't',
       floor: 1,
       top: 420,
-      left: 500, // pixels
+      left: 170, // pixels
       roomType: 'student-room'
+    },
+    {
+      name: 'Amica TUAS',
+      building: 'tuas',
+      floor: 1,
+      top: 630,
+      left: 340, // pixels
+      roomType: 'lecture-hall'
+    },
+    {
+      name: 'TU1',
+      building: 'tuas',
+      floor: 1,
+      top: 430,
+      left: 410, // pixels
+      roomType: 'lecture-hall'
     },
     {
       name: 'TU2',
       building: 'tuas',
-      floor: 1,
-      top: 420,
-      left: 500, // pixels
+      floor: 2,
+      top: 430,
+      left: 410, // pixels
       roomType: 'lecture-hall'
     }
   ];
