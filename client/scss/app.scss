@@ -89,16 +89,18 @@ body {
   }
 }
 
-$searchHeight: 50px;
+$searchHeight: 60px;
 $smallSearchHeight: 50px;
 #search {
-  margin-left: 60px;
-  margin-top: 10px;
+  padding-left: 60px;
+  padding-top: 10px;
+  @include box-sizing(border-box);
+  background: #f6f6f6;
 
   @media only screen and (max-width: 1000px) {
     height: $smallSearchHeight;
-    margin-top: 0;
-    margin-left: 85px;
+    padding-top: 0;
+    padding-left: 85px;
   }
 
   height: $searchHeight;
@@ -163,6 +165,7 @@ $smallSearchHeight: 50px;
   padding: 20px 10px 0;
   font-size: 16px;
   text-align: center;
+  background: #f6f6f6;
 
   @media only screen and (max-width: 1000px) {
     display: none;
@@ -240,7 +243,9 @@ $smallSearchHeight: 50px;
   }
 
   h2 {
-    clear: left;
+    margin: 15px;
+    font-size: 20px;
+
   }
   
   .floor {

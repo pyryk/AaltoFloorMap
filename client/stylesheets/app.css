@@ -105,19 +105,24 @@ body {
 
 /* line 94, ../scss/app.scss */
 #search {
-  margin-left: 60px;
-  margin-top: 10px;
-  height: 50px;
+  padding-left: 60px;
+  padding-top: 10px;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  background: #f6f6f6;
+  height: 60px;
 }
 @media only screen and (max-width: 1000px) {
   /* line 94, ../scss/app.scss */
   #search {
     height: 50px;
-    margin-top: 0;
-    margin-left: 85px;
+    padding-top: 0;
+    padding-left: 85px;
   }
 }
-/* line 106, ../scss/app.scss */
+/* line 108, ../scss/app.scss */
 #search .searchfield {
   margin: 5px 20px;
   padding: 5px;
@@ -125,57 +130,57 @@ body {
   height: 25px;
   font-size: 14px;
 }
-/* line 114, ../scss/app.scss */
+/* line 116, ../scss/app.scss */
 #search .chzn-container {
   margin: 5px 20px;
 }
 @media only screen and (max-width: 1000px) {
-  /* line 114, ../scss/app.scss */
+  /* line 116, ../scss/app.scss */
   #search .chzn-container {
     margin: 0;
     width: 100% !important;
     height: 50px;
   }
-  /* line 121, ../scss/app.scss */
+  /* line 123, ../scss/app.scss */
   #search .chzn-container a {
     height: 50px;
   }
-  /* line 124, ../scss/app.scss */
+  /* line 126, ../scss/app.scss */
   #search .chzn-container a span {
     font-size: 16px;
     padding: 12px 0;
   }
-  /* line 129, ../scss/app.scss */
+  /* line 131, ../scss/app.scss */
   #search .chzn-container a div {
     padding: 13px 0;
   }
 }
-/* line 135, ../scss/app.scss */
+/* line 137, ../scss/app.scss */
 #search .chzn-default {
   color: #666;
 }
-/* line 138, ../scss/app.scss */
+/* line 140, ../scss/app.scss */
 #search .chzn-single {
   border-radius: 0;
 }
 
-/* line 143, ../scss/app.scss */
+/* line 145, ../scss/app.scss */
 #map-wrapper {
   position: absolute;
-  top: 50px;
+  top: 60px;
   left: 0;
   right: 320px;
   bottom: 0;
 }
 @media only screen and (max-width: 1000px) {
-  /* line 143, ../scss/app.scss */
+  /* line 145, ../scss/app.scss */
   #map-wrapper {
     right: 0;
     top: 52px;
   }
 }
 
-/* line 156, ../scss/app.scss */
+/* line 158, ../scss/app.scss */
 #sidebar {
   position: absolute;
   top: 0;
@@ -185,14 +190,15 @@ body {
   padding: 20px 10px 0;
   font-size: 16px;
   text-align: center;
+  background: #f6f6f6;
 }
 @media only screen and (max-width: 1000px) {
-  /* line 156, ../scss/app.scss */
+  /* line 158, ../scss/app.scss */
   #sidebar {
     display: none;
   }
 }
-/* line 172, ../scss/app.scss */
+/* line 175, ../scss/app.scss */
 #sidebar .active-room h2 {
   margin: 10px 0;
   font-weight: bold;
@@ -200,24 +206,24 @@ body {
   overflow: hidden;
   text-overflow: ellipsis;
 }
-/* line 180, ../scss/app.scss */
+/* line 183, ../scss/app.scss */
 #sidebar .active-room .building-name {
   margin: 0 0 20px 0;
   overflow: hidden;
   text-overflow: ellipsis;
 }
-/* line 187, ../scss/app.scss */
+/* line 190, ../scss/app.scss */
 #sidebar .map-url {
   margin-top: 8px;
   font-size: 13px;
 }
-/* line 192, ../scss/app.scss */
+/* line 195, ../scss/app.scss */
 #sidebar .qrcode {
   width: 256px;
   background: white;
   margin: 0 auto;
 }
-/* line 198, ../scss/app.scss */
+/* line 201, ../scss/app.scss */
 #sidebar .legend {
   text-align: left;
   margin: 20px 0 20px 20px;
@@ -225,11 +231,11 @@ body {
   padding: 5px 20px;
   width: 200px;
 }
-/* line 205, ../scss/app.scss */
+/* line 208, ../scss/app.scss */
 #sidebar .legend .legend-entry {
   margin-bottom: 5px;
 }
-/* line 209, ../scss/app.scss */
+/* line 212, ../scss/app.scss */
 #sidebar .legend .legend-entry .destination {
   color: red;
   font-weight: bold;
@@ -238,7 +244,7 @@ body {
   border: 1px solid #ccc;
   background: rgba(255, 255, 255, 0.7);
 }
-/* line 218, ../scss/app.scss */
+/* line 221, ../scss/app.scss */
 #sidebar .legend .legend-entry .legend-symbol {
   display: inline-block;
   width: 30px;
@@ -249,41 +255,42 @@ body {
   box-sizing: border-box;
 }
 
-/* line 228, ../scss/app.scss */
+/* line 231, ../scss/app.scss */
 #buildingDetails {
   position: absolute;
-  top: 50px;
+  top: 60px;
   left: 0;
   right: 320px;
   bottom: 0;
   overflow: auto;
 }
 @media only screen and (max-width: 1000px) {
-  /* line 228, ../scss/app.scss */
+  /* line 231, ../scss/app.scss */
   #buildingDetails {
     right: 0;
     top: 52px;
   }
 }
-/* line 242, ../scss/app.scss */
+/* line 245, ../scss/app.scss */
 #buildingDetails h2 {
-  clear: left;
+  margin: 15px;
+  font-size: 20px;
 }
-/* line 246, ../scss/app.scss */
+/* line 251, ../scss/app.scss */
 #buildingDetails .floor {
   border: 2px solid #ccc;
   margin: 5px;
 }
-/* line 249, ../scss/app.scss */
+/* line 254, ../scss/app.scss */
 #buildingDetails .floor h3 {
   padding: 5px 20px;
   cursor: pointer;
 }
-/* line 254, ../scss/app.scss */
+/* line 259, ../scss/app.scss */
 #buildingDetails .floor .floorplan-wrapper {
   position: relative;
 }
-/* line 257, ../scss/app.scss */
+/* line 262, ../scss/app.scss */
 #buildingDetails .floor .floorplan-wrapper .room-marker {
   position: absolute;
   color: red;
@@ -293,13 +300,13 @@ body {
   margin-left: -10px;
   margin-top: -5px;
 }
-/* line 266, ../scss/app.scss */
+/* line 271, ../scss/app.scss */
 #buildingDetails .floor .floorplan-wrapper .room-marker .room-name {
   display: none;
   font-size: 12px;
   color: rgba(255, 0, 0, 0.7);
 }
-/* line 273, ../scss/app.scss */
+/* line 278, ../scss/app.scss */
 #buildingDetails .floor .floorplan-wrapper .room-marker.active {
   opacity: 1;
   padding: 5px 10px;
@@ -307,38 +314,38 @@ body {
   border: 1px solid #ccc;
   background: rgba(255, 255, 255, 0.7);
 }
-/* line 280, ../scss/app.scss */
+/* line 285, ../scss/app.scss */
 #buildingDetails .floor .floorplan-wrapper .room-marker.active .room-name {
   /*display: inline-block;*/
 }
-/* line 286, ../scss/app.scss */
+/* line 291, ../scss/app.scss */
 #buildingDetails .floor .floorplan-wrapper .device-symbol {
   position: absolute;
   width: 16px;
   height: 16px;
   background: url("../images/location-dot.png");
 }
-/* line 294, ../scss/app.scss */
+/* line 299, ../scss/app.scss */
 #buildingDetails .floor.active {
   display: block;
 }
-/* line 296, ../scss/app.scss */
+/* line 301, ../scss/app.scss */
 #buildingDetails .floor.active h3 {
   background-color: #eee;
 }
-/* line 300, ../scss/app.scss */
+/* line 305, ../scss/app.scss */
 #buildingDetails .floor.inactive {
   display: block;
 }
-/* line 302, ../scss/app.scss */
+/* line 307, ../scss/app.scss */
 #buildingDetails .floor.inactive h3 {
   background-color: #ddd;
 }
-/* line 305, ../scss/app.scss */
+/* line 310, ../scss/app.scss */
 #buildingDetails .floor.inactive img {
   display: none;
 }
-/* line 308, ../scss/app.scss */
+/* line 313, ../scss/app.scss */
 #buildingDetails .floor.inactive .room-marker {
   display: none;
 }

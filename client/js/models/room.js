@@ -23,6 +23,26 @@ Room.include({
   	this.save();
 
   	Room.trigger('activechanged', this.active ? this : undefined);
+  },
+  getIcon: function() {
+  	var imgPath = 'images/';
+  	return imgPath + this.roomType + '.png';
+  },
+  getRoomTypeLabel: function() {
+  	switch(this.roomType) {
+  		case 'lecture-hall':
+  			return 'Lecture hall';
+  		case 'computer-lab':
+  			return 'Computer lab';
+  		case 'student-room':
+  			return 'Student room';
+  		case 'cafeteria':
+  			return 'Cafeteria';
+  		case 'toilet':
+  			return 'Toilet';
+  		default:
+  			return 'Room';
+  	}
   }
 });
 
