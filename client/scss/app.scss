@@ -1,8 +1,21 @@
 @import "compass/css3";
 
+$textColor: #444;
+$backgroundColor: #FBFBFB;
+
+
 body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans;
-  color: #444;
+  color: $textColor;
+}
+
+h1 {
+  position: absolute;
+  z-index: 100;
+  left: 421px;
+  top: 10px;
+  font-size: 26px;
+  color: lighten($textColor, 20%);
 }
 
 #back {
@@ -96,7 +109,7 @@ $sidebarWidth: 320px;
   padding-left: 60px;
   padding-top: 10px;
   @include box-sizing(border-box);
-  background: #f6f6f6;
+  background: $backgroundColor;
 
   @media only screen and (max-width: 1000px) {
     height: $smallSearchHeight;
@@ -166,7 +179,7 @@ $sidebarWidth: 320px;
   padding: 20px 10px 0;
   font-size: 16px;
   text-align: center;
-  background: #f6f6f6;
+  background: $backgroundColor;
 
   @media only screen and (max-width: 1000px) {
     display: none;
@@ -238,6 +251,7 @@ $sidebarWidth: 320px;
   padding: 0 20px 20px 0; 
   bottom: 0;
   overflow: auto;
+  background: $backgroundColor;
 
   @media only screen and (max-width: 1000px) {
     right: 0;
@@ -277,7 +291,7 @@ $sidebarWidth: 320px;
       bottom: 0;
       margin-top: -1px;
       border: 1px solid #bbb;
-      background: #f6f6f6;
+      background: lighten($backgroundColor, 5%);
       z-index: 10;
       overflow: auto;
     }
@@ -326,9 +340,9 @@ $sidebarWidth: 320px;
     &.active {
       display: block;
       h3 {
-        background-color: #f6f6f6;
+        background-color: lighten($backgroundColor, 5%);
         border: 1px solid #ccc;
-        border-bottom: 1px solid #f6f6f6;
+        border-bottom: 1px solid lighten($backgroundColor, 5%);
       }
     }
     &.inactive {

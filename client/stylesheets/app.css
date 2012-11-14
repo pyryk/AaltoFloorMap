@@ -1,16 +1,26 @@
-/* line 3, ../scss/app.scss */
+/* line 7, ../scss/app.scss */
 body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans;
-  color: #444;
+  color: #444444;
 }
 
-/* line 8, ../scss/app.scss */
+/* line 12, ../scss/app.scss */
+h1 {
+  position: absolute;
+  z-index: 100;
+  left: 421px;
+  top: 10px;
+  font-size: 26px;
+  color: #777777;
+}
+
+/* line 21, ../scss/app.scss */
 #back {
   cursor: pointer;
   position: absolute;
   top: 0;
 }
-/* line 17, ../scss/app.scss */
+/* line 30, ../scss/app.scss */
 #back .back-button {
   left: 20px;
   top: 15px;
@@ -38,7 +48,7 @@ body {
   box-shadow: 0 0 3px white inset, 0 1px 1px rgba(0, 0, 0, 0.1);
 }
 @media only screen and (max-width: 1000px) {
-  /* line 17, ../scss/app.scss */
+  /* line 30, ../scss/app.scss */
   #back .back-button {
     top: 0;
     height: 50px;
@@ -47,7 +57,7 @@ body {
     padding-left: 12px;
   }
 }
-/* line 47, ../scss/app.scss */
+/* line 60, ../scss/app.scss */
 #back .back-button:active {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(20%, #eeeeee), color-stop(80%, #ffffff));
   background-image: -webkit-linear-gradient(top, #eeeeee 20%, #ffffff 80%);
@@ -56,7 +66,7 @@ body {
   background-image: -ms-linear-gradient(top, #eeeeee 20%, #ffffff 80%);
   background-image: linear-gradient(top, #eeeeee 20%, #ffffff 80%);
 }
-/* line 52, ../scss/app.scss */
+/* line 65, ../scss/app.scss */
 #back .back-button:active:before {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(20%, #eeeeee), color-stop(80%, #ffffff));
   background-image: -webkit-linear-gradient(top, #eeeeee 20%, #ffffff 80%);
@@ -65,7 +75,7 @@ body {
   background-image: -ms-linear-gradient(top, #eeeeee 20%, #ffffff 80%);
   background-image: linear-gradient(top, #eeeeee 20%, #ffffff 80%);
 }
-/* line 56, ../scss/app.scss */
+/* line 69, ../scss/app.scss */
 #back .back-button:before {
   position: absolute;
   top: 9.9%;
@@ -93,7 +103,7 @@ body {
   -webkit-mask-image: -webkit-gradient(linear, left top, right bottom, from(black), color-stop(0.33, black), color-stop(0.5, transparent), to(transparent));
 }
 @media only screen and (max-width: 1000px) {
-  /* line 56, ../scss/app.scss */
+  /* line 69, ../scss/app.scss */
   #back .back-button:before {
     height: 47px;
     width: 38px;
@@ -103,7 +113,7 @@ body {
   }
 }
 
-/* line 95, ../scss/app.scss */
+/* line 108, ../scss/app.scss */
 #search {
   padding-left: 60px;
   padding-top: 10px;
@@ -111,18 +121,18 @@ body {
   -webkit-box-sizing: border-box;
   -ms-box-sizing: border-box;
   box-sizing: border-box;
-  background: #f6f6f6;
+  background: #fbfbfb;
   height: 60px;
 }
 @media only screen and (max-width: 1000px) {
-  /* line 95, ../scss/app.scss */
+  /* line 108, ../scss/app.scss */
   #search {
     height: 50px;
     padding-top: 0;
     padding-left: 85px;
   }
 }
-/* line 109, ../scss/app.scss */
+/* line 122, ../scss/app.scss */
 #search .searchfield {
   margin: 5px 20px;
   padding: 5px;
@@ -130,41 +140,41 @@ body {
   height: 25px;
   font-size: 14px;
 }
-/* line 117, ../scss/app.scss */
+/* line 130, ../scss/app.scss */
 #search .chzn-container {
   margin: 5px 20px;
 }
 @media only screen and (max-width: 1000px) {
-  /* line 117, ../scss/app.scss */
+  /* line 130, ../scss/app.scss */
   #search .chzn-container {
     margin: 0;
     width: 100% !important;
     height: 50px;
   }
-  /* line 124, ../scss/app.scss */
+  /* line 137, ../scss/app.scss */
   #search .chzn-container a {
     height: 50px;
   }
-  /* line 127, ../scss/app.scss */
+  /* line 140, ../scss/app.scss */
   #search .chzn-container a span {
     font-size: 16px;
     padding: 12px 0;
   }
-  /* line 132, ../scss/app.scss */
+  /* line 145, ../scss/app.scss */
   #search .chzn-container a div {
     padding: 13px 0;
   }
 }
-/* line 138, ../scss/app.scss */
+/* line 151, ../scss/app.scss */
 #search .chzn-default {
   color: #666;
 }
-/* line 141, ../scss/app.scss */
+/* line 154, ../scss/app.scss */
 #search .chzn-single {
   border-radius: 0;
 }
 
-/* line 146, ../scss/app.scss */
+/* line 159, ../scss/app.scss */
 #map-wrapper {
   position: absolute;
   top: 60px;
@@ -173,14 +183,14 @@ body {
   bottom: 0;
 }
 @media only screen and (max-width: 1000px) {
-  /* line 146, ../scss/app.scss */
+  /* line 159, ../scss/app.scss */
   #map-wrapper {
     right: 0;
     top: 52px;
   }
 }
 
-/* line 159, ../scss/app.scss */
+/* line 172, ../scss/app.scss */
 #sidebar {
   position: absolute;
   top: 0;
@@ -194,15 +204,15 @@ body {
   padding: 20px 10px 0;
   font-size: 16px;
   text-align: center;
-  background: #f6f6f6;
+  background: #fbfbfb;
 }
 @media only screen and (max-width: 1000px) {
-  /* line 159, ../scss/app.scss */
+  /* line 172, ../scss/app.scss */
   #sidebar {
     display: none;
   }
 }
-/* line 176, ../scss/app.scss */
+/* line 189, ../scss/app.scss */
 #sidebar .active-room h2 {
   margin: 10px 0;
   font-weight: bold;
@@ -210,24 +220,24 @@ body {
   overflow: hidden;
   text-overflow: ellipsis;
 }
-/* line 184, ../scss/app.scss */
+/* line 197, ../scss/app.scss */
 #sidebar .active-room .building-name {
   margin: 0 0 20px 0;
   overflow: hidden;
   text-overflow: ellipsis;
 }
-/* line 191, ../scss/app.scss */
+/* line 204, ../scss/app.scss */
 #sidebar .map-url {
   margin-top: 8px;
   font-size: 13px;
 }
-/* line 196, ../scss/app.scss */
+/* line 209, ../scss/app.scss */
 #sidebar .qrcode {
   width: 256px;
   background: white;
   margin: 0 auto;
 }
-/* line 202, ../scss/app.scss */
+/* line 215, ../scss/app.scss */
 #sidebar .legend {
   text-align: left;
   margin: 20px 0 20px 20px;
@@ -235,11 +245,11 @@ body {
   padding: 5px 20px;
   width: 200px;
 }
-/* line 209, ../scss/app.scss */
+/* line 222, ../scss/app.scss */
 #sidebar .legend .legend-entry {
   margin-bottom: 5px;
 }
-/* line 213, ../scss/app.scss */
+/* line 226, ../scss/app.scss */
 #sidebar .legend .legend-entry .destination {
   color: red;
   font-weight: bold;
@@ -248,7 +258,7 @@ body {
   border: 1px solid #ccc;
   background: rgba(255, 255, 255, 0.7);
 }
-/* line 222, ../scss/app.scss */
+/* line 235, ../scss/app.scss */
 #sidebar .legend .legend-entry .legend-symbol {
   display: inline-block;
   width: 30px;
@@ -259,7 +269,7 @@ body {
   box-sizing: border-box;
 }
 
-/* line 232, ../scss/app.scss */
+/* line 245, ../scss/app.scss */
 #buildingDetails {
   position: absolute;
   top: 60px;
@@ -268,21 +278,22 @@ body {
   padding: 0 20px 20px 0;
   bottom: 0;
   overflow: auto;
+  background: #fbfbfb;
 }
 @media only screen and (max-width: 1000px) {
-  /* line 232, ../scss/app.scss */
+  /* line 245, ../scss/app.scss */
   #buildingDetails {
     right: 0;
     top: 52px;
   }
 }
-/* line 247, ../scss/app.scss */
+/* line 261, ../scss/app.scss */
 #buildingDetails h2 {
   margin: 15px;
   font-size: 20px;
   height: 24px;
 }
-/* line 253, ../scss/app.scss */
+/* line 267, ../scss/app.scss */
 #buildingDetails .floor {
   float: left;
   -moz-box-sizing: border-box;
@@ -291,7 +302,7 @@ body {
   box-sizing: border-box;
   width: 33%;
 }
-/* line 258, ../scss/app.scss */
+/* line 272, ../scss/app.scss */
 #buildingDetails .floor h3 {
   height: 18px;
   margin: 0 5px;
@@ -302,12 +313,12 @@ body {
   text-align: center;
 }
 @media only screen and (max-width: 500px) {
-  /* line 258, ../scss/app.scss */
+  /* line 272, ../scss/app.scss */
   #buildingDetails .floor h3 {
     padding: 5px 5px;
   }
 }
-/* line 272, ../scss/app.scss */
+/* line 286, ../scss/app.scss */
 #buildingDetails .floor .floorplan-data {
   position: absolute;
   left: 0;
@@ -316,15 +327,15 @@ body {
   bottom: 0;
   margin-top: -1px;
   border: 1px solid #bbb;
-  background: #f6f6f6;
+  background: white;
   z-index: 10;
   overflow: auto;
 }
-/* line 285, ../scss/app.scss */
+/* line 299, ../scss/app.scss */
 #buildingDetails .floor .floorplan-wrapper {
   margin-bottom: 20px;
 }
-/* line 289, ../scss/app.scss */
+/* line 303, ../scss/app.scss */
 #buildingDetails .floor .floorplan-wrapper .room-marker {
   position: absolute;
   color: red;
@@ -334,13 +345,13 @@ body {
   margin-left: -10px;
   margin-top: -5px;
 }
-/* line 298, ../scss/app.scss */
+/* line 312, ../scss/app.scss */
 #buildingDetails .floor .floorplan-wrapper .room-marker .room-name {
   display: none;
   font-size: 12px;
   color: rgba(255, 0, 0, 0.7);
 }
-/* line 305, ../scss/app.scss */
+/* line 319, ../scss/app.scss */
 #buildingDetails .floor .floorplan-wrapper .room-marker.active {
   opacity: 1;
   padding: 5px 10px;
@@ -348,45 +359,45 @@ body {
   border: 1px solid #ccc;
   background: rgba(255, 255, 255, 0.7);
 }
-/* line 312, ../scss/app.scss */
+/* line 326, ../scss/app.scss */
 #buildingDetails .floor .floorplan-wrapper .room-marker.active .room-name {
   /*display: inline-block;*/
 }
-/* line 318, ../scss/app.scss */
+/* line 332, ../scss/app.scss */
 #buildingDetails .floor .floorplan-wrapper .device-symbol {
   position: absolute;
   width: 16px;
   height: 16px;
   background: url("../images/location-dot.png");
 }
-/* line 326, ../scss/app.scss */
+/* line 340, ../scss/app.scss */
 #buildingDetails .floor.active {
   display: block;
 }
-/* line 328, ../scss/app.scss */
+/* line 342, ../scss/app.scss */
 #buildingDetails .floor.active h3 {
-  background-color: #f6f6f6;
+  background-color: white;
   border: 1px solid #ccc;
-  border-bottom: 1px solid #f6f6f6;
+  border-bottom: 1px solid white;
 }
-/* line 334, ../scss/app.scss */
+/* line 348, ../scss/app.scss */
 #buildingDetails .floor.inactive {
   display: block;
 }
-/* line 336, ../scss/app.scss */
+/* line 350, ../scss/app.scss */
 #buildingDetails .floor.inactive h3 {
   background-color: #ddd;
   border: 1px solid #bbb;
 }
-/* line 340, ../scss/app.scss */
+/* line 354, ../scss/app.scss */
 #buildingDetails .floor.inactive img {
   display: none;
 }
-/* line 343, ../scss/app.scss */
+/* line 357, ../scss/app.scss */
 #buildingDetails .floor.inactive .room-marker {
   display: none;
 }
-/* line 346, ../scss/app.scss */
+/* line 360, ../scss/app.scss */
 #buildingDetails .floor.inactive .floorplan-data {
   display: none;
 }
