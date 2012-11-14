@@ -1,0 +1,234 @@
+@import "compass/css3";
+
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans;
+  color: #444;
+}
+
+$searchHeight: 50px;
+$smallSearchHeight: 50px;
+#search {
+
+  @media only screen and (max-width: 1000px) {
+    height: $smallSearchHeight;
+  }
+
+  height: $searchHeight;
+
+  .searchfield {
+    margin: 5px 20px;
+    padding: 5px;
+    width: 300px;
+    height: 25px;
+    font-size: 14px;
+  }
+
+  .chzn-container {
+    margin: 5px 20px;
+    @media only screen and (max-width: 1000px) {
+      margin: 0;
+      width: 100% !important;
+      height: 50px;
+
+      a {
+        height: 50px;
+
+        span {
+          font-size: 16px;
+          padding: 12px 0;
+        }
+
+        div {
+          padding: 13px 0;
+        }
+      }
+    }
+  }
+  .chzn-default {
+    color: #666;
+  }
+  .chzn-single {
+    border-radius: 0;
+  }
+}
+
+#map-wrapper {
+  position: absolute;
+  top: $searchHeight;
+  left: 0;
+  right: 320px;
+  bottom: 0;
+
+  @media only screen and (max-width: 1000px) {
+    right: 0;
+    top: $smallSearchHeight;
+  }
+}
+
+#sidebar {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+
+  width: 300px;
+  padding: 20px 10px 0;
+  font-size: 16px;
+  text-align: center;
+
+  @media only screen and (max-width: 1000px) {
+    display: none;
+  }
+
+  .active-room {
+    h2 {
+      margin: 10px 0;
+      font-weight: bold;
+      font-size: 20px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .building-name {
+      margin: 0 0 20px 0;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+
+  .map-url {
+    margin-top: 8px;
+    font-size: 13px;
+  }
+
+  .qrcode {
+    width: 256px;
+    background: white;
+    margin: 0 auto;
+  }
+
+  .legend {
+    text-align: left;
+    margin: 20px 0 20px 20px;
+    border: 1px solid #ccc;
+    padding: 5px 20px;
+    width: 200px;
+
+    .legend-entry {
+
+      margin-bottom: 5px;
+
+      .destination {
+        color: red;
+        font-weight: bold;
+        padding: 5px 10px;
+        border-radius: 50px;
+        border: 1px solid #ccc;
+        background: rgba(255,255,255,0.7);
+      }
+
+      .legend-symbol {
+        display: inline-block;
+        width: 30px;
+        text-align: center;
+        @include box-sizing(border-box); 
+      }
+    }
+  }
+}
+
+#buildingDetails {
+
+  position: absolute;
+  top: $searchHeight;
+  left: 0;
+  right: 320px;
+  bottom: 0;
+  overflow: auto;
+
+  @media only screen and (max-width: 1000px) {
+    right: 0;
+    top: $smallSearchHeight;
+  }
+
+  #back-button {
+    float: left;
+    padding: 5px;
+    margin: 5px;
+    border: 1px solid #ccc;
+    background: rgba(0,0,0,0.1);
+    cursor: pointer;
+  }
+
+  h2 {
+    clear: left;
+  }
+  
+  .floor {
+    border: 2px solid #ccc;
+    margin: 5px;
+    h3 {
+      padding: 5px 20px;
+      cursor: pointer;
+    }
+
+    .floorplan-wrapper {
+      position: relative;
+
+      .room-marker {
+        position: absolute;
+        color: red;
+        opacity: 0.5;
+        font-weight: bold;
+        padding: 5px 10px;
+        margin-left: -10px;
+        margin-top: -5px;
+
+        .room-name {
+          display: none;
+
+          font-size: 12px;
+          color: rgba(255,0,0,0.7);
+        }
+
+        &.active {
+          opacity: 1;
+          padding: 5px 10px;
+          border-radius: 50px;
+          border: 1px solid #ccc;
+          background: rgba(255,255,255,0.7);
+
+          .room-name {
+            /*display: inline-block;*/
+          }
+        }
+      }
+
+      .device-symbol {
+        position: absolute;
+        width: 16px;
+        height: 16px;
+        background: url("../images/location-dot.png");
+      }
+    }
+    
+    &.active {
+      display: block;
+      h3 {
+        background-color: #eee;
+      }
+    }
+    &.inactive {
+      display: block;
+      h3 {
+        background-color: #ddd;
+      }
+      img {
+        display: none;
+      }
+      .room-marker {
+        display: none;
+      }
+    }
+  }
+}

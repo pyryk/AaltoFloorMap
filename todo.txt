@@ -1,0 +1,4 @@
+TODO
+
+* data input - more rooms, buildings etc.
+* back button to header

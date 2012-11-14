@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Floor map</title>
+  <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta charset="UTF-8" />
+
+  <script type="text/javascript" src="js/lib/jquery-1.8.2.min.js"></script> 
+  <script type="text/javascript" src="js/lib/jquery.qrcode.min.js"></script> 
+  <script type="text/javascript" src="js/lib/jquery.scrollTo.min.js"></script>
+  <script type="text/javascript" src="js/lib/spine/spine.js"></script>
+  <script type="text/javascript" src="js/lib/spine/route.js"></script>
+  <script type="text/javascript" src="js/lib/handlebars-1.0.rc.1.js"></script>
+  <script type="text/javascript" src="js/lib/chosen.jquery.min.js"></script>
+  <script type="text/javascript" src="js/lib/hammer.js"></script>
+  <link href="stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
+  <link href="stylesheets/print.css" media="print" rel="stylesheet" type="text/css" />
+  <!--[if lt IE 8]>
+      <link href="stylesheets/ie.css" media="screen, projection" rel="stylesheet" type="text/css" />
+  <![endif]-->
+  
+  <link href="stylesheets/chosen.css" rel="stylesheet" type="text/css" />
+  <link href="stylesheets/app.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+  <div id="search"></div>
+  <div id="sidebar"></div>
+  <div id="main">
+    <div id="map-wrapper">
+      <div id="map-canvas" style="width: 100%; height: 100%"></div>
+    </div>
+  
+    <div id="buildingDetails">
+    </div>
+  </div>
+  
+  <script id="building-template" type="text/x-handlebars-template">
+    <div id="back-button">&lt; Back</div>
+    <h2>{{building.name}}</h2>
+    <div id="floors">
+      {{#each building.floors}}
+        <div class="floor floor-{{number}} {{state}}">
+          <h3 data-floor-no="{{number}}">Floor {{number}}</h3>
+          <div class="floorplan-wrapper">
+            <img src="images/{{map}}">
+            <div class="rooms"></div>
+            <div class="device"></div>
+          </div>
+
+        </div>
+      {{/each}}
+    </div>
+  </script>
+
+  <script id="room-template" type="text/x-handlebars-template">
+    <div class="room-marker {{#if room.active}}active{{/if}}" style="top: {{room.top}}px; left: {{room.left}}px;" title="{{room.name}}">
+      <span class="marker-icon">x</span>
+      <span class="room-name">{{room.name}}</span>
+    </div>
+  </script>
+
+  <script id="device-template" type="text/x-handlebars-template">
+    <div class="device-symbol" style="top: {{device.top}}px; left: {{device.left}}px"></div>
+  </script>
+  
+  <script id="sidebar-template" type="text/x-handlebars-template">
+    <div class="active-room">
+    {{#if data.room}}
+      <h2>{{data.room.name}}</h2>
+      <p class="building-name">{{data.room.building.name}}</p>
+    {{else}}
+      <h2>&nbsp;</h2>
+      <p class="building-name">&nbsp;</p>
+    {{/if}}
+    </div>
+    <div class="qrcode">(qr code will be here)</div>
+    Scan this with your mobile device to load map, or use this url:
+    <div class="map-url">{{data.url}}</div>
+    <div class="legend">
+      <p class="legend-entry"><span class="legend-symbol"><img src="images/location-dot.png"></span> You are here</p>
+      <p class="legend-entry"><span class="destination legend-symbol">x</span> Your destination</p>
+    </div>
+  </script>
+
+  <script id="searchbar-template" type="text/x-handlebars-template">
+    <select class="searchfield" data-placeholder="Search rooms or buildings...">
+      <option></option>
+      {{#each buildings}}
+        <option value="building-{{id}}">{{name}}</option>
+      {{/each}}
+      {{#each rooms}}
+        <option value="room-{{id}}">{{name}} ({{building.name}})</option>
+      {{/each}}
+    </select>
+  </script>
+  
+  <script type="text/javascript" src="js/app.js"></script>
+  
+  <script type="text/javascript" src="js/models/building.js"></script>
+  <script type="text/javascript" src="js/models/campus.js"></script>
+  <script type="text/javascript" src="js/models/device.js"></script>
+  <script type="text/javascript" src="js/models/map.js"></script>
+  <script type="text/javascript" src="js/models/room.js"></script>
+  <script type="text/javascript" src="js/models/sidebar.js"></script>
+  
+  <script type="text/javascript" src="js/controllers/map.js"></script>
+  <script type="text/javascript" src="js/controllers/building.js"></script>
+  <script type="text/javascript" src="js/controllers/buildingDetails.js"></script>
+  <script type="text/javascript" src="js/controllers/floorRooms.js"></script>
+  <script type="text/javascript" src="js/controllers/room.js"></script>
+  <script type="text/javascript" src="js/controllers/sidebar.js"></script>
+  <script type="text/javascript" src="js/controllers/searchbar.js"></script>
+  <script type="text/javascript" src="js/controllers/device.js"></script>
+
+  <!-- load the data into the app -->
+  <script type="text/javascript" src="js/data/campuses.js"></script>
+  <script type="text/javascript" src="js/data/buildings.js"></script>
+  <script type="text/javascript" src="js/data/rooms.js"></script>
+</body>
+</html>
