@@ -91,6 +91,7 @@ body {
 
 $searchHeight: 60px;
 $smallSearchHeight: 50px;
+$sidebarWidth: 320px;
 #search {
   padding-left: 60px;
   padding-top: 10px;
@@ -146,7 +147,7 @@ $smallSearchHeight: 50px;
   position: absolute;
   top: $searchHeight;
   left: 0;
-  right: 320px;
+  right: $sidebarWidth;
   bottom: 0;
 
   @media only screen and (max-width: 1000px) {
@@ -160,8 +161,8 @@ $smallSearchHeight: 50px;
   top: 0;
   bottom: 0;
   right: 0;
-
-  width: 300px;
+  @include box-sizing(border-box);
+  width: $sidebarWidth;
   padding: 20px 10px 0;
   font-size: 16px;
   text-align: center;
@@ -233,7 +234,8 @@ $smallSearchHeight: 50px;
   position: absolute;
   top: $searchHeight;
   left: 0;
-  right: 320px;
+  right: $sidebarWidth;
+  padding: 0 20px 20px 0; 
   bottom: 0;
   overflow: auto;
 
@@ -245,19 +247,44 @@ $smallSearchHeight: 50px;
   h2 {
     margin: 15px;
     font-size: 20px;
-
+    height: 24px;
   }
   
   .floor {
-    border: 2px solid #ccc;
-    margin: 5px;
+    float: left;
+    @include box-sizing(border-box);
+    width: 33%;
+
     h3 {
-      padding: 5px 20px;
+      height: 18px;
+      margin: 0 5px;
+      padding: 5px 2px;
       cursor: pointer;
+      position: relative;
+      z-index: 20;
+      text-align: center;
+
+      @media only screen and (max-width: 500px) {
+        padding: 5px 5px
+      }
+    }
+
+    .floorplan-data {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 84px;
+      bottom: 0;
+      margin-top: -1px;
+      border: 1px solid #bbb;
+      background: #f6f6f6;
+      z-index: 10;
+      overflow: auto;
     }
 
     .floorplan-wrapper {
-      position: relative;
+
+      margin-bottom: 20px;
 
       .room-marker {
         position: absolute;
@@ -299,18 +326,24 @@ $smallSearchHeight: 50px;
     &.active {
       display: block;
       h3 {
-        background-color: #eee;
+        background-color: #f6f6f6;
+        border: 1px solid #ccc;
+        border-bottom: 1px solid #f6f6f6;
       }
     }
     &.inactive {
       display: block;
       h3 {
         background-color: #ddd;
+        border: 1px solid #bbb;
       }
       img {
         display: none;
       }
       .room-marker {
+        display: none;
+      }
+      .floorplan-data {
         display: none;
       }
     }
