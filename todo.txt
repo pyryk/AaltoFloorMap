@@ -1,4 +1,6 @@
 TODO
 
 * data input - more rooms, buildings etc.
-* back button to header
+* room types to be shown somehow
+* show location on the google map
+* add support for multiple campus

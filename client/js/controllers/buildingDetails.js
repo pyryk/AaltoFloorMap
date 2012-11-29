@@ -11,8 +11,7 @@ var BuildingDetailsController = Spine.Controller.sub({
     this.template = Handlebars.compile(this.rawTemplate.html());
   },
   events: {
-    'click h3': 'switchFloor',
-    'click #back-button': 'goBack'
+    'click h3': 'switchFloor'
   },
   setBuilding: function(building) {
     if (building.id !== this.item.id) {
@@ -22,9 +21,6 @@ var BuildingDetailsController = Spine.Controller.sub({
   },
   switchFloor: function(e) {
     app.navigateTo(this.item, {floor: $(e.target).attr('data-floor-no')});
-  },
-  goBack: function(e) {
-    app.navigateTo({type: 'map'});
   },
   getData: function(floor) {
     var building = this.item.toJSON();
@@ -70,20 +66,20 @@ var BuildingDetailsController = Spine.Controller.sub({
     var startzoom = 1;
     var hammer = new Hammer(document.getElementById("floors"), {prevent_default:true, drag_min_distance: 20});
     hammer.ontransformstart = this.proxy(function(ev) { 
-      startZoom = parseFloat(this.floorsEl.css('zoom'));
+      startZoom = parseFloat(this.$('.floor.active .floorplan-wrapper').css('zoom'));
       hammer.ondragstart(ev);
     });
     hammer.ontransform = this.proxy(function(ev) { 
-      this.floorsEl.css('zoom', startZoom * ev.scale);
+      this.$('.floor.active .floorplan-wrapper').css('zoom', startZoom * ev.scale);
       hammer.ondrag(ev);
     });
     hammer.ondragstart = this.proxy(function(ev) {
-      startpos = {x: this.el.scrollLeft(), y: this.el.scrollTop()};
+      startpos = {x: this.$('.floor.active .floorplan-data').scrollLeft(), y: this.$('.floor.active .floorplan-data').scrollTop()};
     });
     hammer.ondrag = this.proxy(function(ev) { 
       var top = -ev.distanceY + startpos.y;
       var left = -ev.distanceX + startpos.x;
-      this.el.scrollTo({top: top, left: left})
+      this.$('.floor.active .floorplan-data').scrollTo({top: top, left: left})
       return false;
     });
 

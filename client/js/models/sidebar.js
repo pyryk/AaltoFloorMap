@@ -6,7 +6,11 @@ Sidebar.include({
 	toJSON: function() {
 		var data = Spine.Model.prototype.toJSON.call(this);
 		if (data.room) {
+			var typeLabel = data.room.getRoomTypeLabel();
+			var icon = data.room.getIcon();
 			data.room = data.room.toJSON();
+			data.room.typeLabel = typeLabel;
+			data.room.icon = icon;
 
 			try {
 				data.room.building = Building.find(data.room.building).toJSON();

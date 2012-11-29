@@ -1,16 +1,120 @@
 @import "compass/css3";
 
+$textColor: #444;
+$backgroundColor: #FBFBFB;
+
+
 body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans;
-  color: #444;
+  color: $textColor;
 }
 
-$searchHeight: 50px;
+h1 {
+  position: absolute;
+  z-index: 100;
+  left: 421px;
+  top: 10px;
+  font-size: 26px;
+  color: lighten($textColor, 20%);
+}
+
+#back {
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+
+  $button-border-color: #aaa;
+  $button-gradient: linear-gradient(top, white 20%, #F6F6F6 50%, #EEE 52%, #F4F4F4 100%);
+  $button-gradient-active: linear-gradient(top, #EEE 20%, white 80%);
+
+  .back-button {
+    left:20px;
+    top: 15px;
+
+    position:absolute;
+    background-repeat:repeat-x;
+    background-color: #ccc;
+    @include background-image($button-gradient);
+    height: 23px;
+    padding: 0 10px 0 8px;
+    z-index : 0;
+    border-radius: 0;
+    -webkit-border-top-left-radius : 10px 22px;
+    -webkit-border-bottom-left-radius : 10px 15px;
+    font-size : 13px;
+    display : block;
+    text-align:center;
+    color:#666;
+    line-height : 23px;
+    border: 1px solid $button-border-color;
+    box-shadow: 0 0 3px white inset, 0 1px 1px rgba(0, 0, 0, 0.1);
+
+    @media only screen and (max-width: 1000px) {
+      top: 0;
+      height: 50px;
+      line-height: 50px;
+      font-size: 16px; 
+      padding-left: 12px;
+    }
+
+    &:active {
+      @include background-image($button-gradient-active);
+    }
+}
+
+.back-button:active:before {
+  @include background-image($button-gradient-active);
+}
+ 
+.back-button:before{
+    position:absolute;
+    top:9.9%;
+    left:-5px;
+    -webkit-background-size : 22px 22px;
+    background-position :-2px -1.5px;
+    background-color: #ccc;
+    @include background-image($button-gradient);
+    height : 20px;
+    width: 19px;
+    -webkit-transform : rotate(-45deg) skew(-10deg, -10deg);
+    -webkit-border-top-right-radius : 100px 40px;
+    -webkit-border-top-left-radius : 30px 2px;
+    -webkit-border-bottom-right-radius : 2px 30px;
+    -webkit-border-bottom-left-radius : 40px 100px;
+    z-index : 1;
+    content : ' ';
+    border: 1px solid $button-border-color;
+    border-left : 1.5px solid $button-border-color;
+    -webkit-mask-image :
+        -webkit-gradient(linear, left top, right bottom,
+            from(#000000),
+            color-stop(0.33,#000000),
+            color-stop(0.5, transparent),
+            to(transparent));
+
+        @media only screen and (max-width: 1000px) {
+          height: 47px;
+          width: 38px;
+          left: -10px;
+          -webkit-border-top-right-radius: 54px 18px;
+          -webkit-border-bottom-left-radius: 38px 119px;
+        }
+  }
+}
+
+$searchHeight: 60px;
 $smallSearchHeight: 50px;
+$sidebarWidth: 320px;
 #search {
+  padding-left: 60px;
+  padding-top: 10px;
+  @include box-sizing(border-box);
+  background: $backgroundColor;
 
   @media only screen and (max-width: 1000px) {
     height: $smallSearchHeight;
+    padding-top: 0;
+    padding-left: 85px;
   }
 
   height: $searchHeight;
@@ -56,12 +160,12 @@ $smallSearchHeight: 50px;
   position: absolute;
   top: $searchHeight;
   left: 0;
-  right: 320px;
+  right: $sidebarWidth;
   bottom: 0;
 
   @media only screen and (max-width: 1000px) {
     right: 0;
-    top: $smallSearchHeight;
+    top: $smallSearchHeight+2;
   }
 }
 
@@ -70,11 +174,12 @@ $smallSearchHeight: 50px;
   top: 0;
   bottom: 0;
   right: 0;
-
-  width: 300px;
+  @include box-sizing(border-box);
+  width: $sidebarWidth;
   padding: 20px 10px 0;
   font-size: 16px;
   text-align: center;
+  background: $backgroundColor;
 
   @media only screen and (max-width: 1000px) {
     display: none;
@@ -142,38 +247,58 @@ $smallSearchHeight: 50px;
   position: absolute;
   top: $searchHeight;
   left: 0;
-  right: 320px;
+  right: $sidebarWidth;
+  padding: 0 20px 20px 0; 
   bottom: 0;
   overflow: auto;
+  background: $backgroundColor;
 
   @media only screen and (max-width: 1000px) {
     right: 0;
-    top: $smallSearchHeight;
-  }
-
-  #back-button {
-    float: left;
-    padding: 5px;
-    margin: 5px;
-    border: 1px solid #ccc;
-    background: rgba(0,0,0,0.1);
-    cursor: pointer;
+    top: $smallSearchHeight+2;
   }
 
   h2 {
-    clear: left;
+    margin: 15px;
+    font-size: 20px;
+    height: 24px;
   }
   
   .floor {
-    border: 2px solid #ccc;
-    margin: 5px;
+    float: left;
+    @include box-sizing(border-box);
+    width: 33%;
+
     h3 {
-      padding: 5px 20px;
+      height: 18px;
+      margin: 0 5px;
+      padding: 5px 2px;
       cursor: pointer;
+      position: relative;
+      z-index: 20;
+      text-align: center;
+
+      @media only screen and (max-width: 500px) {
+        padding: 5px 5px
+      }
+    }
+
+    .floorplan-data {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 84px;
+      bottom: 0;
+      margin-top: -1px;
+      border: 1px solid #bbb;
+      background: lighten($backgroundColor, 5%);
+      z-index: 10;
+      overflow: auto;
     }
 
     .floorplan-wrapper {
-      position: relative;
+
+      margin-bottom: 20px;
 
       .room-marker {
         position: absolute;
@@ -215,18 +340,24 @@ $smallSearchHeight: 50px;
     &.active {
       display: block;
       h3 {
-        background-color: #eee;
+        background-color: lighten($backgroundColor, 5%);
+        border: 1px solid #ccc;
+        border-bottom: 1px solid lighten($backgroundColor, 5%);
       }
     }
     &.inactive {
       display: block;
       h3 {
         background-color: #ddd;
+        border: 1px solid #bbb;
       }
       img {
         display: none;
       }
       .room-marker {
+        display: none;
+      }
+      .floorplan-data {
         display: none;
       }
     }
