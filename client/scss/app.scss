@@ -1,4 +1,5 @@
 @import "compass/css3";
+@import "compass/css3/box";
 
 $textColor: #444;
 $backgroundColor: #FBFBFB;
@@ -263,11 +264,17 @@ $sidebarWidth: 320px;
     font-size: 20px;
     height: 24px;
   }
+
+  #floors {
+    @include display-box;
+    @include box-orient(horizontal);
+    
+  }
   
   .floor {
-    float: left;
+    @include box-flex(1);
     @include box-sizing(border-box);
-    width: 33%;
+    
 
     h3 {
       height: 18px;

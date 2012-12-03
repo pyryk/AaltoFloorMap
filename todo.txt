@@ -3,4 +3,5 @@ TODO
 * data input - more rooms, buildings etc.
 * room types to be shown somehow
 * show location on the google map
-* add support for multiple campus
+* add support for multiple campuses
+* add support for buildings with > 3 floors (flex-box)
