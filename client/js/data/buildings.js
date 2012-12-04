@@ -1,5 +1,5 @@
 (function(){
-  var buildingdata = [
+ var buildingdata = [
     {
       id: 'tuas', 
       name: 'TUAS', 
@@ -20,6 +20,7 @@
         {number: 3, map: 't3.png'},
       ]
     },
+	
   ];
   
   for(var i in buildingdata) {
