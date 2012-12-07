@@ -45,7 +45,7 @@ Device.extend({
     device.save();
     device.persist();
     console.log('Device initialized');
-  }
+  },
   getDevice: function() {
     var building, floor, top, left, type;
   	var device = Device.first();
