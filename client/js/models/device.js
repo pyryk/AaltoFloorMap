@@ -34,6 +34,18 @@ Device.include({
 });
 
 Device.extend({
+  initialize: function(building, floor, top, left) {
+    var device = Device.getDevice();
+
+    device.building = building;
+    device.floor = floor;
+    device.top = top;
+    device.left = left;
+
+    device.save();
+    device.persist();
+    console.log('Device initialized');
+  }
   getDevice: function() {
     var building, floor, top, left, type;
   	var device = Device.first();
