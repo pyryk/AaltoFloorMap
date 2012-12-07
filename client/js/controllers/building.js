@@ -16,7 +16,8 @@ var BuildingController = Spine.Controller.sub({
     this.marker = new google.maps.Marker({
           position: this.item.getLatLng(),
           map: map.mapComponent,
-          title:this.item.name
+          title:this.item.name,
+          zIndex: 5,
     });
     
     google.maps.event.addListener(this.marker, 'click', this.proxy(this.clicked))
