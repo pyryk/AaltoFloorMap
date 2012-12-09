@@ -3,7 +3,7 @@
 
 $textColor: #444;
 $backgroundColor: #FBFBFB;
-
+$iconWidth: 32px;
 
 body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans;
@@ -224,21 +224,35 @@ $sidebarWidth: 320px;
     .legend-entry {
 
       margin-bottom: 5px;
+      height: 36px;
 
       .destination {
-        color: red;
-        font-weight: bold;
-        padding: 5px 10px;
-        border-radius: 50px;
-        border: 1px solid #ccc;
+        
+        
         background: rgba(255,255,255,0.7);
+
+        &.legend-symbol img {
+          border-radius: 50px;
+          border: 1px solid #ccc;
+          padding: 5px 10px;
+        }
       }
 
       .legend-symbol {
-        display: inline-block;
-        width: 30px;
+        img { width: $iconWidth }
+        width: 65px;
+        height: 36px;
+
+        
+        float: left;
         text-align: center;
         @include box-sizing(border-box); 
+      }
+
+      .legend-description {
+        display: table-cell;
+        vertical-align: middle;
+        height: 36px;
       }
     }
   }
@@ -317,6 +331,11 @@ $sidebarWidth: 320px;
         margin-left: -10px;
         margin-top: -5px;
 
+        .marker-icon img {
+          width: $iconWidth;
+          
+        }
+
         .room-name {
           display: none;
 
@@ -339,9 +358,9 @@ $sidebarWidth: 320px;
 
       .device-symbol {
         position: absolute;
-        width: 16px;
-        height: 16px;
-        background: url("../images/location-dot.png");
+        width: 32px;
+        height: 32px;
+        background: url("../images/pin.png");
       }
     }
     

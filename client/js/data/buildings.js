@@ -15,8 +15,8 @@
       name: 'Tietotekniikka', 
       location: [60.186763, 24.822192], 
       floors: [
-        {number: 1, map: 't1.png'},
-        {number: 2, map: 't2.png'},
+        {number: 1, map: 'maps/cs1.png'},
+        {number: 2, map: 'maps/cs2.png'},
         {number: 3, map: 't3.png'},
       ]
     },

@@ -14,7 +14,7 @@ var RoomController = Spine.Controller.sub({
 		}
 	},
 	getData: function() {
-		return {className: this.active, room: this.item};
+		return {className: this.active, room: this.item, icon: this.item.getIcon()};
 	},
 	render: function() {
 		var data = this.getData();

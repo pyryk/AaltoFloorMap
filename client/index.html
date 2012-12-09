@@ -65,7 +65,7 @@
 
   <script id="room-template" type="text/x-handlebars-template">
     <div class="room-marker {{#if room.active}}active{{/if}}" style="top: {{room.top}}px; left: {{room.left}}px;" title="{{room.name}}">
-      <span class="marker-icon">x</span>
+      <span class="marker-icon"><img src="{{icon}}" alt="x"></span>
       <span class="room-name">{{room.name}}</span>
     </div>
   </script>
@@ -88,8 +88,16 @@
     Scan this with your mobile device to load map, or use this url:
     <div class="map-url">{{data.url}}</div>
     <div class="legend">
-      <p class="legend-entry"><span class="legend-symbol"><img src="images/pin.png"></span> You are here</p>
-      <p class="legend-entry"><span class="destination legend-symbol">x</span> Your destination</p>
+      <p class="legend-entry">
+        <span class="legend-symbol"><img src="images/pin.png"></span>
+        <span class="legend-description">You are here</span>
+      </p>
+      {{#if data.room}}
+        <p class="legend-entry">
+          <span class="destination legend-symbol"><img src="{{data.room.icon}}" alt="x"></span>
+          <span class="legend-description">Your destination</span>
+        </p>
+      {{/if}}
     </div>
   </script>
 

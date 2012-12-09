@@ -249,28 +249,41 @@ h1 {
 /* line 224, ../scss/app.scss */
 #sidebar .legend .legend-entry {
   margin-bottom: 5px;
+  height: 36px;
 }
-/* line 228, ../scss/app.scss */
+/* line 229, ../scss/app.scss */
 #sidebar .legend .legend-entry .destination {
-  color: red;
-  font-weight: bold;
-  padding: 5px 10px;
-  border-radius: 50px;
-  border: 1px solid #ccc;
   background: rgba(255, 255, 255, 0.7);
 }
-/* line 237, ../scss/app.scss */
+/* line 234, ../scss/app.scss */
+#sidebar .legend .legend-entry .destination.legend-symbol img {
+  border-radius: 50px;
+  border: 1px solid #ccc;
+  padding: 5px 10px;
+}
+/* line 241, ../scss/app.scss */
 #sidebar .legend .legend-entry .legend-symbol {
-  display: inline-block;
-  width: 30px;
+  width: 65px;
+  height: 36px;
+  float: left;
   text-align: center;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   -ms-box-sizing: border-box;
   box-sizing: border-box;
 }
+/* line 242, ../scss/app.scss */
+#sidebar .legend .legend-entry .legend-symbol img {
+  width: 32px;
+}
+/* line 252, ../scss/app.scss */
+#sidebar .legend .legend-entry .legend-description {
+  display: table-cell;
+  vertical-align: middle;
+  height: 36px;
+}
 
-/* line 247, ../scss/app.scss */
+/* line 261, ../scss/app.scss */
 #buildingDetails {
   position: absolute;
   top: 60px;
@@ -282,19 +295,19 @@ h1 {
   background: #fbfbfb;
 }
 @media only screen and (max-width: 1000px) {
-  /* line 247, ../scss/app.scss */
+  /* line 261, ../scss/app.scss */
   #buildingDetails {
     right: 0;
     top: 52px;
   }
 }
-/* line 263, ../scss/app.scss */
+/* line 277, ../scss/app.scss */
 #buildingDetails h2 {
   margin: 15px;
   font-size: 20px;
   height: 24px;
 }
-/* line 269, ../scss/app.scss */
+/* line 283, ../scss/app.scss */
 #buildingDetails #floors {
   display: -moz-box;
   display: -webkit-box;
@@ -305,7 +318,7 @@ h1 {
   -ms-box-orient: horizontal;
   box-orient: horizontal;
 }
-/* line 275, ../scss/app.scss */
+/* line 289, ../scss/app.scss */
 #buildingDetails .floor {
   -moz-box-flex: 1;
   -webkit-box-flex: 1;
@@ -316,7 +329,7 @@ h1 {
   -ms-box-sizing: border-box;
   box-sizing: border-box;
 }
-/* line 280, ../scss/app.scss */
+/* line 294, ../scss/app.scss */
 #buildingDetails .floor h3 {
   height: 18px;
   margin: 0 5px;
@@ -327,12 +340,12 @@ h1 {
   text-align: center;
 }
 @media only screen and (max-width: 500px) {
-  /* line 280, ../scss/app.scss */
+  /* line 294, ../scss/app.scss */
   #buildingDetails .floor h3 {
     padding: 5px 5px;
   }
 }
-/* line 294, ../scss/app.scss */
+/* line 308, ../scss/app.scss */
 #buildingDetails .floor .floorplan-data {
   position: absolute;
   left: 0;
@@ -345,11 +358,11 @@ h1 {
   z-index: 10;
   overflow: auto;
 }
-/* line 307, ../scss/app.scss */
+/* line 321, ../scss/app.scss */
 #buildingDetails .floor .floorplan-wrapper {
   margin-bottom: 20px;
 }
-/* line 311, ../scss/app.scss */
+/* line 325, ../scss/app.scss */
 #buildingDetails .floor .floorplan-wrapper .room-marker {
   position: absolute;
   color: red;
@@ -359,13 +372,17 @@ h1 {
   margin-left: -10px;
   margin-top: -5px;
 }
-/* line 320, ../scss/app.scss */
+/* line 334, ../scss/app.scss */
+#buildingDetails .floor .floorplan-wrapper .room-marker .marker-icon img {
+  width: 32px;
+}
+/* line 339, ../scss/app.scss */
 #buildingDetails .floor .floorplan-wrapper .room-marker .room-name {
   display: none;
   font-size: 12px;
   color: rgba(255, 0, 0, 0.7);
 }
-/* line 327, ../scss/app.scss */
+/* line 346, ../scss/app.scss */
 #buildingDetails .floor .floorplan-wrapper .room-marker.active {
   opacity: 1;
   padding: 5px 10px;
@@ -373,45 +390,45 @@ h1 {
   border: 1px solid #ccc;
   background: rgba(255, 255, 255, 0.7);
 }
-/* line 334, ../scss/app.scss */
+/* line 353, ../scss/app.scss */
 #buildingDetails .floor .floorplan-wrapper .room-marker.active .room-name {
   /*display: inline-block;*/
 }
-/* line 340, ../scss/app.scss */
+/* line 359, ../scss/app.scss */
 #buildingDetails .floor .floorplan-wrapper .device-symbol {
   position: absolute;
-  width: 16px;
-  height: 16px;
-  background: url("../images/location-dot.png");
+  width: 32px;
+  height: 32px;
+  background: url("../images/pin.png");
 }
-/* line 348, ../scss/app.scss */
+/* line 367, ../scss/app.scss */
 #buildingDetails .floor.active {
   display: block;
 }
-/* line 350, ../scss/app.scss */
+/* line 369, ../scss/app.scss */
 #buildingDetails .floor.active h3 {
   background-color: white;
   border: 1px solid #ccc;
   border-bottom: 1px solid white;
 }
-/* line 356, ../scss/app.scss */
+/* line 375, ../scss/app.scss */
 #buildingDetails .floor.inactive {
   display: block;
 }
-/* line 358, ../scss/app.scss */
+/* line 377, ../scss/app.scss */
 #buildingDetails .floor.inactive h3 {
   background-color: #ddd;
   border: 1px solid #bbb;
 }
-/* line 362, ../scss/app.scss */
+/* line 381, ../scss/app.scss */
 #buildingDetails .floor.inactive img {
   display: none;
 }
-/* line 365, ../scss/app.scss */
+/* line 384, ../scss/app.scss */
 #buildingDetails .floor.inactive .room-marker {
   display: none;
 }
-/* line 368, ../scss/app.scss */
+/* line 387, ../scss/app.scss */
 #buildingDetails .floor.inactive .floorplan-data {
   display: none;
 }

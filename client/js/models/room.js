@@ -7,7 +7,20 @@ Room.configure('Room', 'name', 'building', 'floor', 'top', 'left', 'roomType', '
 // * student-room
 // * cafeteria
 // * toilet
+// * library
+// * meeting-room
 // * room (default)
+
+var RoomTypes = {
+	'lecture-hall': 'Lecture hall',
+  'computer-lab': 'Computer lab',
+  'student-room': 'Student room',
+  'cafeteria': 'Cafeteria',
+  'toilet': 'Toilet',
+  'library': 'Library',
+  'meeting-room': 'Meeting Room',
+  'room': 'Room'
+}
 
 Room.include({
   type: 'room',
@@ -25,24 +38,11 @@ Room.include({
   	Room.trigger('activechanged', this.active ? this : undefined);
   },
   getIcon: function() {
-  	var imgPath = 'images/';
+  	var imgPath = 'images/icons/';
   	return imgPath + this.roomType + '.png';
   },
   getRoomTypeLabel: function() {
-  	switch(this.roomType) {
-  		case 'lecture-hall':
-  			return 'Lecture hall';
-  		case 'computer-lab':
-  			return 'Computer lab';
-  		case 'student-room':
-  			return 'Student room';
-  		case 'cafeteria':
-  			return 'Cafeteria';
-  		case 'toilet':
-  			return 'Toilet';
-  		default:
-  			return 'Room';
-  	}
+  	return RoomTypes[this.roomType] ? RoomTypes[this.roomType] : 'Room';
   }
 });
 
