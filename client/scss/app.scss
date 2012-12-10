@@ -122,13 +122,13 @@ $sidebarWidth: 320px;
 
   .searchfield {
     margin: 5px 20px;
-    padding: 5px;
+    //padding: 5px;
     width: 300px;
-    height: 25px;
+    //height: 25px;
     font-size: 14px;
   }
 
-  .chzn-container {
+  /*.chzn-container {
     margin: 5px 20px;
     @media only screen and (max-width: 1000px) {
       margin: 0;
@@ -154,7 +154,7 @@ $sidebarWidth: 320px;
   }
   .chzn-single {
     border-radius: 0;
-  }
+  }*/
 }
 
 #map-wrapper {
@@ -222,12 +222,9 @@ $sidebarWidth: 320px;
     width: 200px;
 
     .legend-entry {
-
-      margin-bottom: 5px;
-      height: 36px;
+      height: 50px;
 
       .destination {
-        
         
         background: rgba(255,255,255,0.7);
 
@@ -241,7 +238,6 @@ $sidebarWidth: 320px;
       .legend-symbol {
         img { width: $iconWidth }
         width: 65px;
-        height: 36px;
 
         
         float: left;
@@ -252,7 +248,7 @@ $sidebarWidth: 320px;
       .legend-description {
         display: table-cell;
         vertical-align: middle;
-        height: 36px;
+        height: 50px;
       }
     }
   }

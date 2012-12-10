@@ -20,6 +20,12 @@ Sidebar.include({
 			
 		}
 
+		data.roomTypes = [];
+
+		for(var key in RoomTypes) {
+			data.roomTypes.push({name: RoomTypes[key], icon: Room.getIconByType(key)});
+		}
+
 		return data;
 	}
 });

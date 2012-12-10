@@ -32,6 +32,21 @@ var SearchbarController = Spine.Controller.sub({
 		var data = this.getData();
 		this.html(this.template(data));
 
-		this.$('.searchfield').chosen({no_results_text: "No room or buildings found"});
+		this.$('.searchfield').select2({matcher: function(term, text, opt) {
+			if (term === '') {
+				return true;
+			}
+
+			if (text.toUpperCase().indexOf(term.toUpperCase()) >= 0) {
+				return true;
+			}
+
+			var type = RoomTypes[opt.attr('data-type')];
+			if (type) {
+				return type.toUpperCase().indexOf(term.toUpperCase()) >= 0
+			}
+
+			return false;
+		}});
 	}
 });

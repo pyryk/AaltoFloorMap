@@ -18,8 +18,7 @@ var RoomTypes = {
   'cafeteria': 'Cafeteria',
   'toilet': 'Toilet',
   'library': 'Library',
-  'meeting-room': 'Meeting Room',
-  'room': 'Room'
+  'meeting-room': 'Meeting Room'
 }
 
 Room.include({
@@ -38,8 +37,7 @@ Room.include({
   	Room.trigger('activechanged', this.active ? this : undefined);
   },
   getIcon: function() {
-  	var imgPath = 'images/icons/';
-  	return imgPath + this.roomType + '.png';
+  	return Room.getIconByType(this.roomType);
   },
   getRoomTypeLabel: function() {
   	return RoomTypes[this.roomType] ? RoomTypes[this.roomType] : 'Room';
@@ -47,6 +45,10 @@ Room.include({
 });
 
 Room.extend({
+	getIconByType: function(type) {
+		var imgPath = 'images/icons/';
+  	return imgPath + type + '.png';
+	},
 	findActive: function() {
 		return Room.findByAttribute('active', true);
 	},

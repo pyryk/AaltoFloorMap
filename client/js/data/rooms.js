@@ -130,7 +130,7 @@
       floor: 1,
       top: 630,
       left: 340, // pixels
-      roomType: 'lecture-hall'
+      roomType: 'cafeteria'
     },
     {
       name: 'TU1',

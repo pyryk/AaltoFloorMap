@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Floor map</title>
+  <title>Aalto Floor Maps</title>
   <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
@@ -13,7 +13,7 @@
   <script type="text/javascript" src="js/lib/spine/spine.js"></script>
   <script type="text/javascript" src="js/lib/spine/route.js"></script>
   <script type="text/javascript" src="js/lib/handlebars-1.0.rc.1.js"></script>
-  <script type="text/javascript" src="js/lib/chosen.jquery.min.js"></script>
+  <script type="text/javascript" src="js/lib/select2.min.js"></script>
   <script type="text/javascript" src="js/lib/hammer.js"></script>
   <link href="stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
   <link href="stylesheets/print.css" media="print" rel="stylesheet" type="text/css" />
@@ -21,7 +21,7 @@
       <link href="stylesheets/ie.css" media="screen, projection" rel="stylesheet" type="text/css" />
   <![endif]-->
   
-  <link href="stylesheets/chosen.css" rel="stylesheet" type="text/css" />
+  <link href="stylesheets/select2.css" rel="stylesheet" type="text/css" />
   <link href="stylesheets/app.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -93,11 +93,17 @@
         <span class="legend-description">You are here</span>
       </p>
       {{#if data.room}}
-        <p class="legend-entry">
+        <!--<p class="legend-entry">
           <span class="destination legend-symbol"><img src="{{data.room.icon}}" alt="x"></span>
           <span class="legend-description">Your destination</span>
-        </p>
+        </p>-->
       {{/if}}
+      {{#each data.roomTypes}}
+      <p class="legend-entry">
+        <span class="legend-symbol"><img src="{{icon}}"></span>
+        <span class="legend-description">{{name}}</span>
+      </p>
+      {{/each}}
     </div>
   </script>
 
@@ -108,7 +114,7 @@
         <option value="building-{{id}}">{{name}}</option>
       {{/each}}
       {{#each rooms}}
-        <option value="room-{{id}}">{{name}} ({{building.name}})</option>
+        <option data-type="{{roomType}}" value="room-{{id}}">{{name}} ({{building.name}})</option>
       {{/each}}
     </select>
   </script>
