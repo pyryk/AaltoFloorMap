@@ -18,6 +18,14 @@
       left: 1235, // pixels
       roomType: 'lecture-hall'
     },
+	{
+      name: 'T1',
+      building: 't',
+      floor: 3,
+      top: 530,
+      left: 3125, // pixels
+      roomType: 'lecture-hall'
+    },
     {
       name: 'T2',
       building: 't',
@@ -110,9 +118,9 @@
       name: 'Toilets 3rd Floor',
       building: 't',
       floor: 3,
-      top: 195,
-      left: 880, // pixels
-      roomType: 'student-room'
+      top: 340,
+      left: 2257, // pixels
+      roomType: 'toilet'
     },
 
     // TUAS

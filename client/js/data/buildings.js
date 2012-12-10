@@ -17,7 +17,7 @@
       floors: [
         {number: 1, map: 'maps/cs1.png'},
         {number: 2, map: 'maps/cs2.png'},
-        {number: 3, map: 't3.png'},
+        {number: 3, map: 'maps/cs3.png'},
       ]
     },
 	
