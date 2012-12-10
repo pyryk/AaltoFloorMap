@@ -12,9 +12,9 @@ var MapController = Spine.Controller.sub({
     }
     map.mapComponent = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
     map.save();
+
     // init geolocation
     // var device = Device.getDevice();
-    
     // this.addLocationMarker(device);
     Building.bind('create', this.proxy(this.addMarker));
     this.addAllMarkers();
