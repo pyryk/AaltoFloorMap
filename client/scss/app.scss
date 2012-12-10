@@ -175,6 +175,7 @@ $sidebarWidth: 320px;
   top: 0;
   bottom: 0;
   right: 0;
+  overflow: auto;
   @include box-sizing(border-box);
   width: $sidebarWidth;
   padding: 20px 10px 0;
@@ -312,6 +313,37 @@ $sidebarWidth: 320px;
       background: lighten($backgroundColor, 5%);
       z-index: 10;
       overflow: auto;
+
+      .controls {
+        position: fixed;
+        left: 20px;
+
+        .zoomIn, .zoomOut {
+          position: absolute;
+          left: 0;
+          width: 19px;
+          height: 19px;
+          border: 1px solid #ccc;
+          //display: table-cell;
+          vertical-align: middle;
+          text-align: center;
+          background-color: rgba(230,230,230,0.7);
+          cursor: pointer;
+
+          &:active {
+            background-color: rgba(200,200,200,0.7);
+          }
+        }
+
+        .zoomIn {
+          top: 20px;
+          border-bottom: none;
+        }
+
+        .zoomOut {
+          top: 40px;
+        }
+      }
     }
 
     .floorplan-wrapper {

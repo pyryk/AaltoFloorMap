@@ -11,7 +11,9 @@ var BuildingDetailsController = Spine.Controller.sub({
     this.template = Handlebars.compile(this.rawTemplate.html());
   },
   events: {
-    'click h3': 'switchFloor'
+    'click h3': 'switchFloor',
+    'click .zoomIn': 'zoomIn',
+    'click .zoomOut': 'zoomOut'
   },
   setBuilding: function(building) {
     if (building.id !== this.item.id) {
@@ -21,6 +23,23 @@ var BuildingDetailsController = Spine.Controller.sub({
   },
   switchFloor: function(e) {
     app.navigateTo(this.item, {floor: $(e.target).attr('data-floor-no')});
+  },
+  zoomIn: function() {
+    this.zoom(0.1);
+  },
+  zoomOut: function() {
+    this.zoom(-0.1);
+  },
+  zoom: function(amount) {
+    var el = this.$('.floor.active .floorplan-wrapper');
+    var currentZoom = parseFloat(el.css('zoom'));
+
+    if (!currentZoom) {
+      currentZoom = 1;
+    }
+
+    console.log(currentZoom + amount, currentZoom, amount);
+    el.css('zoom', currentZoom + amount);
   },
   getData: function(floor) {
     var building = this.item.toJSON();
