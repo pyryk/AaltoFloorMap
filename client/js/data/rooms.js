@@ -118,8 +118,8 @@
       name: 'Toilets 3rd Floor',
       building: 't',
       floor: 3,
-      top: 340,
-      left: 2257, // pixels
+      top: 135,
+      left: 893, // pixels
       roomType: 'toilet'
     },
 
