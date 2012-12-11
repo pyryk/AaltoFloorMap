@@ -34,11 +34,11 @@ var BuildingDetailsController = Spine.Controller.sub({
     var el = this.$('.floor.active .floorplan-wrapper');
     var currentZoom = parseFloat(el.css('zoom'));
 
+    // with ff currentZoom is NaN when not explicitly set
     if (!currentZoom) {
       currentZoom = 1;
     }
 
-    console.log(currentZoom + amount, currentZoom, amount);
     el.css('zoom', currentZoom + amount);
   },
   getData: function(floor) {
