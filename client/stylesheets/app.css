@@ -2,11 +2,11 @@
 body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans;
   color: #444444;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
+  position: absolute !important;
+  top: 0 !important;
+  bottom: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
 }
 
 /* line 18, ../scss/app.scss */
