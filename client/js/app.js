@@ -12,6 +12,7 @@ var App = Spine.Controller.sub({
         this.showView(params);
       },
       "!/:building/:floor/:room": function(params) {
+        params.room = decodeURIComponent(params.room);
         this.showView(params);
       },
       "!/": function() {
@@ -132,7 +133,7 @@ var App = Spine.Controller.sub({
       }
       this.navigate('!/' + object.id + '/' + params.floor + '/');
     } else if (object.type === 'room') {
-      this.navigate('!/' + object.building + '/' + object.floor + '/' + object.name);
+      this.navigate('!/' + object.building + '/' + object.floor + '/' + encodeURIComponent(object.name));
     } else if (object.type === 'campus') {
       console.log('not supported yet');
     } else if (object.type === 'map') {
