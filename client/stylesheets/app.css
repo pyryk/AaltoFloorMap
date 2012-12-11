@@ -2,9 +2,14 @@
 body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans;
   color: #444444;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
 
-/* line 13, ../scss/app.scss */
+/* line 18, ../scss/app.scss */
 h1 {
   position: absolute;
   z-index: 100;
@@ -14,13 +19,13 @@ h1 {
   color: #777777;
 }
 
-/* line 22, ../scss/app.scss */
+/* line 27, ../scss/app.scss */
 #back {
   cursor: pointer;
   position: absolute;
   top: 0;
 }
-/* line 31, ../scss/app.scss */
+/* line 36, ../scss/app.scss */
 #back .back-button {
   left: 20px;
   top: 15px;
@@ -48,7 +53,7 @@ h1 {
   box-shadow: 0 0 3px white inset, 0 1px 1px rgba(0, 0, 0, 0.1);
 }
 @media only screen and (max-width: 1000px) {
-  /* line 31, ../scss/app.scss */
+  /* line 36, ../scss/app.scss */
   #back .back-button {
     top: 0;
     height: 50px;
@@ -57,7 +62,7 @@ h1 {
     padding-left: 12px;
   }
 }
-/* line 61, ../scss/app.scss */
+/* line 66, ../scss/app.scss */
 #back .back-button:active {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(20%, #eeeeee), color-stop(80%, #ffffff));
   background-image: -webkit-linear-gradient(top, #eeeeee 20%, #ffffff 80%);
@@ -66,7 +71,7 @@ h1 {
   background-image: -ms-linear-gradient(top, #eeeeee 20%, #ffffff 80%);
   background-image: linear-gradient(top, #eeeeee 20%, #ffffff 80%);
 }
-/* line 66, ../scss/app.scss */
+/* line 71, ../scss/app.scss */
 #back .back-button:active:before {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(20%, #eeeeee), color-stop(80%, #ffffff));
   background-image: -webkit-linear-gradient(top, #eeeeee 20%, #ffffff 80%);
@@ -75,7 +80,7 @@ h1 {
   background-image: -ms-linear-gradient(top, #eeeeee 20%, #ffffff 80%);
   background-image: linear-gradient(top, #eeeeee 20%, #ffffff 80%);
 }
-/* line 70, ../scss/app.scss */
+/* line 75, ../scss/app.scss */
 #back .back-button:before {
   position: absolute;
   top: 9.9%;
@@ -103,7 +108,7 @@ h1 {
   -webkit-mask-image: -webkit-gradient(linear, left top, right bottom, from(black), color-stop(0.33, black), color-stop(0.5, transparent), to(transparent));
 }
 @media only screen and (max-width: 1000px) {
-  /* line 70, ../scss/app.scss */
+  /* line 75, ../scss/app.scss */
   #back .back-button:before {
     height: 47px;
     width: 38px;
@@ -113,7 +118,7 @@ h1 {
   }
 }
 
-/* line 109, ../scss/app.scss */
+/* line 114, ../scss/app.scss */
 #search {
   padding-left: 60px;
   padding-top: 10px;
@@ -152,21 +157,21 @@ h1 {
   }*/
 }
 @media only screen and (max-width: 1000px) {
-  /* line 109, ../scss/app.scss */
+  /* line 114, ../scss/app.scss */
   #search {
     height: 50px;
     padding-top: 0;
     padding-left: 85px;
   }
 }
-/* line 123, ../scss/app.scss */
+/* line 128, ../scss/app.scss */
 #search .searchfield {
   margin: 5px 20px;
   width: 300px;
   font-size: 14px;
 }
 
-/* line 160, ../scss/app.scss */
+/* line 165, ../scss/app.scss */
 #map-wrapper {
   position: absolute;
   top: 60px;
@@ -175,14 +180,14 @@ h1 {
   bottom: 0;
 }
 @media only screen and (max-width: 1000px) {
-  /* line 160, ../scss/app.scss */
+  /* line 165, ../scss/app.scss */
   #map-wrapper {
     right: 0;
     top: 52px;
   }
 }
 
-/* line 173, ../scss/app.scss */
+/* line 178, ../scss/app.scss */
 #sidebar {
   position: absolute;
   top: 0;
@@ -200,12 +205,12 @@ h1 {
   background: #fbfbfb;
 }
 @media only screen and (max-width: 1000px) {
-  /* line 173, ../scss/app.scss */
+  /* line 178, ../scss/app.scss */
   #sidebar {
     display: none;
   }
 }
-/* line 191, ../scss/app.scss */
+/* line 196, ../scss/app.scss */
 #sidebar .active-room h2 {
   margin: 10px 0;
   font-weight: bold;
@@ -213,25 +218,25 @@ h1 {
   overflow: hidden;
   text-overflow: ellipsis;
 }
-/* line 199, ../scss/app.scss */
+/* line 204, ../scss/app.scss */
 #sidebar .active-room .building-name {
   margin: 0 0 20px 0;
   overflow: hidden;
   text-overflow: ellipsis;
 }
-/* line 206, ../scss/app.scss */
+/* line 211, ../scss/app.scss */
 #sidebar .map-url {
   margin-top: 8px;
   font-size: 13px;
   word-break: break-all;
 }
-/* line 212, ../scss/app.scss */
+/* line 217, ../scss/app.scss */
 #sidebar .qrcode {
   width: 256px;
   background: white;
   margin: 0 auto;
 }
-/* line 218, ../scss/app.scss */
+/* line 223, ../scss/app.scss */
 #sidebar .legend {
   text-align: left;
   margin: 20px 0 20px 20px;
@@ -239,17 +244,17 @@ h1 {
   padding: 5px 20px;
   width: 200px;
 }
-/* line 227, ../scss/app.scss */
+/* line 232, ../scss/app.scss */
 #sidebar .legend .legend-entry .destination {
   background: rgba(255, 255, 255, 0.7);
 }
-/* line 231, ../scss/app.scss */
+/* line 236, ../scss/app.scss */
 #sidebar .legend .legend-entry .destination.legend-symbol img {
   border-radius: 50px;
   border: 1px solid #ccc;
   padding: 5px 10px;
 }
-/* line 238, ../scss/app.scss */
+/* line 243, ../scss/app.scss */
 #sidebar .legend .legend-entry .legend-symbol {
   width: 65px;
   float: left;
@@ -259,18 +264,18 @@ h1 {
   -ms-box-sizing: border-box;
   box-sizing: border-box;
 }
-/* line 239, ../scss/app.scss */
+/* line 244, ../scss/app.scss */
 #sidebar .legend .legend-entry .legend-symbol img {
   width: 32px;
 }
-/* line 248, ../scss/app.scss */
+/* line 253, ../scss/app.scss */
 #sidebar .legend .legend-entry .legend-description {
   display: table-cell;
   vertical-align: middle;
   height: 40px;
 }
 
-/* line 257, ../scss/app.scss */
+/* line 262, ../scss/app.scss */
 #buildingDetails {
   position: absolute;
   top: 60px;
@@ -282,19 +287,19 @@ h1 {
   background: #fbfbfb;
 }
 @media only screen and (max-width: 1000px) {
-  /* line 257, ../scss/app.scss */
+  /* line 262, ../scss/app.scss */
   #buildingDetails {
     right: 0;
     top: 52px;
   }
 }
-/* line 273, ../scss/app.scss */
+/* line 278, ../scss/app.scss */
 #buildingDetails h2 {
   margin: 15px;
   font-size: 20px;
   height: 24px;
 }
-/* line 279, ../scss/app.scss */
+/* line 284, ../scss/app.scss */
 #buildingDetails #floors {
   display: -moz-box;
   display: -webkit-box;
@@ -305,7 +310,7 @@ h1 {
   -ms-box-orient: horizontal;
   box-orient: horizontal;
 }
-/* line 285, ../scss/app.scss */
+/* line 290, ../scss/app.scss */
 #buildingDetails .floor {
   -moz-box-flex: 1;
   -webkit-box-flex: 1;
@@ -316,7 +321,7 @@ h1 {
   -ms-box-sizing: border-box;
   box-sizing: border-box;
 }
-/* line 290, ../scss/app.scss */
+/* line 295, ../scss/app.scss */
 #buildingDetails .floor h3 {
   height: 18px;
   margin: 0 5px;
@@ -327,12 +332,12 @@ h1 {
   text-align: center;
 }
 @media only screen and (max-width: 500px) {
-  /* line 290, ../scss/app.scss */
+  /* line 295, ../scss/app.scss */
   #buildingDetails .floor h3 {
     padding: 5px 5px;
   }
 }
-/* line 304, ../scss/app.scss */
+/* line 309, ../scss/app.scss */
 #buildingDetails .floor .floorplan-data {
   position: absolute;
   left: 0;
@@ -345,12 +350,12 @@ h1 {
   z-index: 10;
   overflow: auto;
 }
-/* line 316, ../scss/app.scss */
+/* line 321, ../scss/app.scss */
 #buildingDetails .floor .floorplan-data .controls {
   position: fixed;
   left: 20px;
 }
-/* line 320, ../scss/app.scss */
+/* line 325, ../scss/app.scss */
 #buildingDetails .floor .floorplan-data .controls .zoomIn, #buildingDetails .floor .floorplan-data .controls .zoomOut {
   position: absolute;
   left: 0;
@@ -362,24 +367,24 @@ h1 {
   background-color: rgba(230, 230, 230, 0.7);
   cursor: pointer;
 }
-/* line 332, ../scss/app.scss */
+/* line 337, ../scss/app.scss */
 #buildingDetails .floor .floorplan-data .controls .zoomIn:active, #buildingDetails .floor .floorplan-data .controls .zoomOut:active {
   background-color: rgba(200, 200, 200, 0.7);
 }
-/* line 337, ../scss/app.scss */
+/* line 342, ../scss/app.scss */
 #buildingDetails .floor .floorplan-data .controls .zoomIn {
   top: 20px;
   border-bottom: none;
 }
-/* line 342, ../scss/app.scss */
+/* line 347, ../scss/app.scss */
 #buildingDetails .floor .floorplan-data .controls .zoomOut {
   top: 40px;
 }
-/* line 348, ../scss/app.scss */
+/* line 353, ../scss/app.scss */
 #buildingDetails .floor .floorplan-wrapper {
   margin-bottom: 20px;
 }
-/* line 352, ../scss/app.scss */
+/* line 357, ../scss/app.scss */
 #buildingDetails .floor .floorplan-wrapper .room-marker {
   position: absolute;
   color: red;
@@ -389,17 +394,17 @@ h1 {
   margin-left: -10px;
   margin-top: -5px;
 }
-/* line 361, ../scss/app.scss */
+/* line 366, ../scss/app.scss */
 #buildingDetails .floor .floorplan-wrapper .room-marker .marker-icon img {
   width: 32px;
 }
-/* line 366, ../scss/app.scss */
+/* line 371, ../scss/app.scss */
 #buildingDetails .floor .floorplan-wrapper .room-marker .room-name {
   display: none;
   font-size: 12px;
   color: rgba(255, 0, 0, 0.7);
 }
-/* line 373, ../scss/app.scss */
+/* line 378, ../scss/app.scss */
 #buildingDetails .floor .floorplan-wrapper .room-marker.active {
   opacity: 1;
   padding: 5px 10px;
@@ -407,45 +412,45 @@ h1 {
   border: 1px solid #ccc;
   background: rgba(255, 255, 255, 0.7);
 }
-/* line 380, ../scss/app.scss */
+/* line 385, ../scss/app.scss */
 #buildingDetails .floor .floorplan-wrapper .room-marker.active .room-name {
   /*display: inline-block;*/
 }
-/* line 386, ../scss/app.scss */
+/* line 391, ../scss/app.scss */
 #buildingDetails .floor .floorplan-wrapper .device-symbol {
   position: absolute;
   width: 32px;
   height: 32px;
   background: url("../images/pin.png");
 }
-/* line 394, ../scss/app.scss */
+/* line 399, ../scss/app.scss */
 #buildingDetails .floor.active {
   display: block;
 }
-/* line 396, ../scss/app.scss */
+/* line 401, ../scss/app.scss */
 #buildingDetails .floor.active h3 {
   background-color: white;
   border: 1px solid #ccc;
   border-bottom: 1px solid white;
 }
-/* line 402, ../scss/app.scss */
+/* line 407, ../scss/app.scss */
 #buildingDetails .floor.inactive {
   display: block;
 }
-/* line 404, ../scss/app.scss */
+/* line 409, ../scss/app.scss */
 #buildingDetails .floor.inactive h3 {
   background-color: #ddd;
   border: 1px solid #bbb;
 }
-/* line 408, ../scss/app.scss */
+/* line 413, ../scss/app.scss */
 #buildingDetails .floor.inactive img {
   display: none;
 }
-/* line 411, ../scss/app.scss */
+/* line 416, ../scss/app.scss */
 #buildingDetails .floor.inactive .room-marker {
   display: none;
 }
-/* line 414, ../scss/app.scss */
+/* line 419, ../scss/app.scss */
 #buildingDetails .floor.inactive .floorplan-data {
   display: none;
 }
