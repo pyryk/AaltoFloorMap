@@ -19,11 +19,11 @@
       roomType: 'lecture-hall'
     },
 	{
-      name: 'T1',
+      name: 'T1 (3rd floor)',
       building: 't',
       floor: 3,
-      top: 530,
-      left: 3125, // pixels
+      top: 210,
+      left: 1235, // pixels
       roomType: 'lecture-hall'
     },
     {

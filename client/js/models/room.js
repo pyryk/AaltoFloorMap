@@ -1,5 +1,5 @@
 var Room = Spine.Model.sub();
-Room.configure('Room', 'name', 'building', 'floor', 'top', 'left', 'roomType', 'active');
+Room.configure('Room', 'name', 'building', 'floor', 'top', 'left', 'roomType', 'active', 'shouldBounce');
 
 // possible room types here:
 // * lecture-hall
@@ -24,6 +24,7 @@ var RoomTypes = {
 Room.include({
   type: 'room',
   active: false,
+  shouldBounce: true,
   toggleActive: function() {
   	Room.each(this.proxy(function(room) {
   		if (room.id !== this.id && room.active) {

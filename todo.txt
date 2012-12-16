@@ -2,4 +2,7 @@ TODO
 
 * data input - more rooms, buildings etc.
 * add support for multiple campuses
-* search to support room types etc.
+* report
+	* installation & extending instructions
+	* features
+	* structure

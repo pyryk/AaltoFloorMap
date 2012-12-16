@@ -8,7 +8,10 @@ var FloorRoomsController = Spine.Controller.sub({
 
   addOne: function(item){
     if (item.building === this.building.id && item.floor === this.floor) {
-      var room = new RoomController({item: item});
+      var room = new RoomController({
+        item: item,
+        buildingController: this.buildingController,
+      });
       this.append(room.render());
     }
   },

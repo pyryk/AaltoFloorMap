@@ -13,7 +13,10 @@ var SearchbarController = Spine.Controller.sub({
 		if (value.indexOf('building-') == 0) {
 			window.app.navigateTo(Building.find(value.replace('building-','')));
 		} else if (value.indexOf('room-') == 0) {
-			window.app.navigateTo(Room.find(value.replace('room-','')));
+			var room = Room.find(value.replace('room-',''));
+			room.shouldBounce = true;
+			room.save();
+			window.app.navigateTo(room);
 		}
 	},
 	getData: function() {

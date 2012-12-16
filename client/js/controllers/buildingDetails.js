@@ -68,6 +68,7 @@ var BuildingDetailsController = Spine.Controller.sub({
     for (var i in this.item.floors) {
       new FloorRoomsController({
         building: this.item,
+        buildingController: this,
         floor: this.item.floors[i].number,
         el: this.$('.floor-' + this.item.floors[i].number + ' .rooms')
       });
@@ -115,10 +116,20 @@ var BuildingDetailsController = Spine.Controller.sub({
     // pan to the active room
     var active = Room.findActive();
     if (active) {
-      // TODO take map offset into account
-      //this.el.scrollTo(active.top, active.left);
-      this.el.scrollTo(active.top, active.left);
+      this.scrollTo(active);
     }
+  },
+  scrollTo: function(active) {
+    var scrollable = this.$('.floor-' + this.currentFloor + ' > .floorplan-data');
+    var offset = scrollable.find('.floorplan-wrapper').offset();
+
+    var scrollTop = scrollable.scrollTop();
+    var scrollLeft = scrollable.scrollLeft();
+
+    var offsetTop = active.top < scrollTop ? -50 : 50;
+    var offsetLeft = active.left < scrollLeft ? -50 : 50;
+
+    scrollable.scrollTo({top: active.top + offsetTop, left: active.left + offsetLeft}, 500);
   }
   
 });

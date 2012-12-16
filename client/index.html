@@ -68,7 +68,7 @@
   </script>
 
   <script id="room-template" type="text/x-handlebars-template">
-    <div class="room-marker {{#if room.active}}active{{/if}}" style="top: {{room.top}}px; left: {{room.left}}px;" title="{{room.name}}">
+    <div class="room-marker {{#if room.active}}active{{/if}} {{#if room.shouldBounce}}attention{{/if}}" style="top: {{room.top}}px; left: {{room.left}}px;" title="{{room.name}}">
       <span class="marker-icon"><img src="{{icon}}" alt="x"></span>
       <span class="room-name">{{room.name}}</span>
     </div>

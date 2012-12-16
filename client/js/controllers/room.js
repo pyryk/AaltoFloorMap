@@ -10,6 +10,12 @@ var RoomController = Spine.Controller.sub({
 		if (this.item.active) { // deselect the room
 			window.app.navigateTo(Building.find(this.item.building), {floor: this.item.floor});
 		} else {
+
+			if (this.item.shouldBounce) {
+				this.item.shouldBounce = false;
+				this.item.save();
+			}
+
 			window.app.navigateTo(this.item);
 		}
 	},
@@ -19,6 +25,11 @@ var RoomController = Spine.Controller.sub({
 	render: function() {
 		var data = this.getData();
     this.html(this.template(data));
+
+    if (this.item.active && this.item.shouldBounce) {
+    	this.buildingController.scrollTo(this.item);
+    }
+
     return this;
 	}
 });

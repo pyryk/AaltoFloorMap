@@ -1,5 +1,6 @@
 @import "compass/css3";
 @import "compass/css3/box";
+@import "partials/animate.sass";
 
 $textColor: #444;
 $backgroundColor: #FBFBFB;
@@ -381,6 +382,10 @@ $sidebarWidth: 320px;
           border-radius: 50px;
           border: 1px solid #ccc;
           background: rgba(255,255,255,0.7);
+
+          &.attention {
+            @include animate(bounce);
+          }
 
           .room-name {
             /*display: inline-block;*/
